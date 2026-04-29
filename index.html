@@ -274,52 +274,12 @@ button:active{transform:scale(.98)}
   margin:28px 0 12px;
   opacity:.9;
 }
- @keyframes fadeUp{
-  from{opacity:0; transform:translateY(18px)}
-  to{opacity:1; transform:translateY(0)}
-}
-
-@keyframes pop{
-  0%{transform:scale(.95)}
-  60%{transform:scale(1.04)}
-  100%{transform:scale(1)}
-}
-
-.hero{
-  animation:fadeUp .7s ease both;
-}
-
-.card{
-  animation:fadeUp .65s ease both;
-}
-
-.card:nth-of-type(1){animation-delay:.05s}
-.card:nth-of-type(2){animation-delay:.10s}
-.card:nth-of-type(3){animation-delay:.15s}
-.card:nth-of-type(4){animation-delay:.20s}
-.card:nth-of-type(5){animation-delay:.25s}
-
-button{
-  transition:transform .12s ease, box-shadow .2s ease;
-}
-
-button:active{
-  transform:scale(.97);
-}
-
-.ring{
-  transition:background .7s ease, box-shadow .4s ease;
-}
-
-.status{
-  animation:pop .35s ease both;
-} 
 </style>
 </head>
 <body>
 <div class="app">
 
-<div class="hero">MACRO 🍽️ LOGGER</div>
+<div class="hero">MACRO ð½ï¸ LOGGER</div>
 
 <div class="card card-blue">
   <h2>Today</h2>
@@ -344,7 +304,7 @@ button:active{
 </div>
 
 <div class="card card-red">
-  <h2>🎯 Daily Macro Targets</h2>
+  <h2>ð¯ Daily Macro Targets</h2>
 
   <div class="row">
     <div>
@@ -366,11 +326,11 @@ button:active{
   </div>
 
   <button class="purple" onclick="saveTargets()">Save Targets</button>
-  <div id="targetStatus" class="status">✅ Targets saved for this date</div>
+  <div id="targetStatus" class="status">â Targets saved for this date</div>
 </div>
 
 <div class="card card-green">
-  <h2>➕ Add Food</h2>
+  <h2>â Add Food</h2>
 
   <label>Food Name</label>
   <input id="food" placeholder="Example: Banana / Chicken / Belvita">
@@ -411,7 +371,7 @@ button:active{
 </div>
 
 <div class="card card-purple">
-  <h2>⭐ My Saved Foods</h2>
+  <h2>â­ My Saved Foods</h2>
   <div class="note">Save foods you eat often. Tap a saved item to fill the Add Food section.</div>
 
   <label>Saved Item Name</label>
@@ -441,7 +401,7 @@ button:active{
 </div>
 
 <div class="card card-blue">
-  <h2>📸 Scan Nutrition Label</h2>
+  <h2>ð¸ Scan Nutrition Label</h2>
   <div class="note">Use a close, straight, bright photo. Review values before adding.</div>
 
   <input id="photo" type="file" accept="image/*" capture="environment">
@@ -455,7 +415,7 @@ button:active{
 </div>
 
 <div class="card card-green">
-  <h2>📒 Food Log</h2>
+  <h2>ð Food Log</h2>
   <div id="log"></div>
   <button class="light" onclick="exportCSV()">Export CSV</button>
   <button class="danger" onclick="clearDay()">Clear Today</button>
@@ -634,8 +594,8 @@ function renderSavedFoods(){
   $('savedFoods').innerHTML = foods.map((x,i) => `
     <div class="saved-food">
       <div onclick='setForm(${JSON.stringify(x)})'>
-        <b>📌 ${x.name}</b>
-        <div class="meta">${x.cal} cal • C ${x.c}g • P ${x.p}g • F ${x.f}g</div>
+        <b>ð ${x.name}</b>
+        <div class="meta">${x.cal} cal â¢ C ${x.c}g â¢ P ${x.p}g â¢ F ${x.f}g</div>
       </div>
       <button class="small-btn danger" onclick="deleteSavedFood(${i})">Delete</button>
     </div>
@@ -692,8 +652,8 @@ function render(){
   $('log').innerHTML = log.map((x,i) => `
     <div class="log-item">
       <div>
-        <b>➤ ${x.name}</b>
-        <div class="meta">${x.cal} cal • Carbs ${x.c}g • Protein ${x.p}g • Fat ${x.f}g</div>
+        <b>â¤ ${x.name}</b>
+        <div class="meta">${x.cal} cal â¢ Carbs ${x.c}g â¢ Protein ${x.p}g â¢ Fat ${x.f}g</div>
       </div>
       <button class="small-btn danger" onclick="deleteFood(${i})">Remove</button>
     </div>
@@ -728,7 +688,7 @@ async function scanLabel(){
     return;
   }
 
-  $('status').textContent = "Scanning... this may take 10–30 seconds.";
+  $('status').textContent = "Scanning... this may take 10â30 seconds.";
 
   try{
     const result = await Tesseract.recognize(file,'eng');
