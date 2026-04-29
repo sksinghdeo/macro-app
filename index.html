@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Macro Logger</title>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<style>
+body{
+font-family:Arial,sans-serif;
+margin:0;
+padding:20px;
+background:#f4f4f4;
+color:#111;
+}
+.card{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:15px;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:16px;
+box-sizing:border-box;
+}
+button{
+background:#007aff;
+color:white;
+border:none;
+font-weight:bold;
+}
+h1,h2{
+margin-top:0;
+}
+.food{
+padding:8px 0;
+border-bottom:1px solid #eee;
+}
+</style>
+</head>
+<body>
+
+<h1>Macro Logger</h1>
+
+<div class="card">
+<h2>Daily Totals</h2>
+<p>Calories: <span id="cal">0</span></p>
+<p>Carbs: <span id="carb">0</span> g</p>
+<p>Protein: <span id="protein">0</span> g</p>
+<p>Fat: <span id="fat">0</span> g</p>
+</div>
+
+<div class="card">
+<h2>Add Food</h2>
+<input id="foodName" placeholder="Food name">
+<input id="foodCal" placeholder="Calories" type="number">
+<input id="foodCarb" placeholder="Carbs g" type="number">
+<input id="foodProtein" placeholder="Protein g" type="number">
+<input id="foodFat" placeholder="Fat g" type="number">
+<button onclick="addFood()">Add Food</button>
+</div>
+
+<div class="card">
+<h2>Scan Nutrition Label</h2>
+<input type="file" accept="image/*" capture="environment" id="img">
+<button onclick="scan()">Scan Label</button>
+<p id="status"></p>
+</div>
+
+<div class="card">
+<h2>Food Log</h2>
+<div id="log"></div>
+</div>
+
+<script>
+let totals={cal:0,carb:0,protein:0,fat:0};
+
+function update(){
+document.getElementById("cal").innerText=totals.cal;
+document.getElementById("carb").innerText=totals.carb;
+document.getElementById("protein").innerText=totals.protein;
+document.getElementById("fat").innerText=totals.fat;
+}
+
+function addFood(){
+let name=document.getElementById("foodName").value;
+let cal=Number(document.getElementById("foodCal").value);
+let carb=Number(document.getElementById("foodCarb").value);
+let protein=Number(document.getElementById("foodProtein").value);
+let fat=Number(document.getElementById("foodFat").value);
+
+totals.cal+=cal;
+totals.carb+=carb;
+totals.protein+=protein;
+totals.fat+=fat;
+
+document.getElementById("log").innerHTML+=
+"<div class='food'><b>"+name+"</b> - "+cal+" cal</div>";
+
+update();
+}
+
+async function scan(){
+let file=document.getElementById("img").files[0];
+if(!file)return;
+
+document.getElementById("status").innerText="Scanning...";
+
+const { data:{ text } } = await Tesseract.recognize(file,'eng');
+
+document.getElementById("status").innerText=text;
+
+let cal=(text.match(/Calories\s*(\d+)/i)||[])[1]||0;
+let carb=(text.match(/Carbohydrate\s*(\d+)/i)||[])[1]||0;
+let protein=(text.match(/Protein\s*(\d+)/i)||[])[1]||0;
+let fat=(text.match(/Fat\s*(\d+)/i)||[])[1]||0;
+
+document.getElementById("foodName").value="Scanned Food";
+document.getElementById("foodCal").value=cal;
+document.getElementById("foodCarb").value=carb;
+document.getElementById("foodProtein").value=protein;
+document.getElementById("foodFat").value=fat;
+}
+</script>
+
+</body>
+</html>
