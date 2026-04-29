@@ -114,10 +114,9 @@ input:focus,textarea:focus{
 .hidden-date{
   position:absolute;
   opacity:0;
+  pointer-events:none;
   width:1px;
   height:1px;
-  left:50%;
-  top:0;
 }
 
 textarea{min-height:95px;resize:vertical}
@@ -275,8 +274,7 @@ button:active{transform:scale(.98)}
   margin:28px 0 12px;
   opacity:.9;
 }
-
-@keyframes fadeUp{
+ @keyframes fadeUp{
   from{opacity:0; transform:translateY(18px)}
   to{opacity:1; transform:translateY(0)}
 }
@@ -513,13 +511,10 @@ function updateDateDisplay(){
 }
 
 function openDatePicker(){
-  const dateInput = $('date');
-
-  if(dateInput.showPicker){
-    dateInput.showPicker();
+  if($('date').showPicker){
+    $('date').showPicker();
   }else{
-    dateInput.focus();
-    dateInput.click();
+    $('date').click();
   }
 }
 
