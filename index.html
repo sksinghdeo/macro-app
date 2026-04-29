@@ -168,8 +168,8 @@ button{
 
 .progress-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
   margin-top:14px;
 }
 
@@ -177,7 +177,9 @@ button{
   --p:0%;
   --ring:#16a34a;
   width:100%;
+  max-width:150px;
   aspect-ratio:1/1;
+  margin:auto;
   border-radius:50%;
   background:conic-gradient(var(--ring) var(--p),#e5e7eb 0);
   display:flex;
@@ -280,7 +282,7 @@ button{
 <div class="hero">MACRO 🍽️ LOGGER</div>
 
 <div class="card card-blue">
-  <h2>📅 Today</h2>
+  <h2>🗓️ Today</h2>
 
   <label>Date</label>
   <div class="date-box">
