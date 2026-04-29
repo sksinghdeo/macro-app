@@ -114,9 +114,10 @@ input:focus,textarea:focus{
 .hidden-date{
   position:absolute;
   opacity:0;
-  pointer-events:none;
   width:1px;
   height:1px;
+  left:50%;
+  top:0;
 }
 
 textarea{min-height:95px;resize:vertical}
@@ -512,10 +513,13 @@ function updateDateDisplay(){
 }
 
 function openDatePicker(){
-  if($('date').showPicker){
-    $('date').showPicker();
+  const dateInput = $('date');
+
+  if(dateInput.showPicker){
+    dateInput.showPicker();
   }else{
-    $('date').click();
+    dateInput.focus();
+    dateInput.click();
   }
 }
 
