@@ -3,226 +3,617 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Macro Logger</title>
+<title>MACRO LOGGER</title>
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
 <style>
-body{margin:0;background:#f5f6f8;color:#111827;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:16px}
-.app{max-width:520px;margin:auto}
-h1{font-size:34px;margin:10px 0 4px}.sub{color:#6b7280;margin-bottom:14px}
-.card{background:white;border-radius:22px;padding:18px;margin:14px 0;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-h2{margin:0 0 14px;font-size:24px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.total{background:#f3f4f6;border-radius:16px;padding:10px 6px;text-align:center}
-.total b{display:block;font-size:17px}.total span{font-size:11px;color:#6b7280}
-input,textarea{width:100%;box-sizing:border-box;border:1px solid #d1d5db;border-radius:14px;padding:13px;font-size:16px;margin:6px 0}
-textarea{min-height:90px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-button{width:100%;border:0;border-radius:15px;padding:14px;font-size:16px;font-weight:800;margin-top:10px;background:#2563eb;color:white}
-.good{background:#16a34a}.light{background:#eef2ff;color:#1d4ed8}.danger{background:#fee2e2;color:#b91c1c}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{width:auto;background:#eff6ff;color:#1d4ed8;border:1px solid #dbeafe;border-radius:999px;padding:8px 11px;margin:0}
-.food{display:grid;grid-template-columns:1fr auto;gap:8px;border-bottom:1px solid #e5e7eb;padding:12px 0}
-.meta{font-size:13px;color:#6b7280}.x{width:auto;background:#f3f4f6;color:#6b7280;padding:8px 10px;margin:0}
-.preview{width:100%;max-height:240px;object-fit:contain;border-radius:14px;margin-top:10px;background:#f3f4f6;display:none}
-.small{font-size:13px;color:#6b7280}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  padding:18px;
+  background:linear-gradient(135deg,#fff7ed,#eef2ff,#ecfdf5);
+  color:#111827;
+  font-family:"Times New Roman", Times, serif;
+}
+
+.app{
+  max-width:540px;
+  margin:auto;
+}
+
+.main-title{
+  text-align:center;
+  font-size:42px;
+  font-weight:900;
+  letter-spacing:2px;
+  margin:18px 0 20px;
+  padding:18px;
+  border-radius:24px;
+  background:linear-gradient(135deg,#1d4ed8,#7c3aed,#db2777);
+  color:white;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.card{
+  background:white;
+  border-radius:24px;
+  padding:20px;
+  margin:18px 0;
+  box-shadow:0 10px 28px rgba(0,0,0,.12);
+  border:1px solid rgba(255,255,255,.7);
+}
+
+.card h2{
+  margin:0 0 16px;
+  font-size:28px;
+  font-weight:900;
+}
+
+.icon-title{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+input,textarea{
+  width:100%;
+  max-width:100%;
+  border:1.5px solid #cbd5e1;
+  border-radius:16px;
+  padding:14px;
+  font-size:18px;
+  font-family:"Times New Roman", Times, serif;
+  margin:7px 0 12px;
+  background:#fff;
+}
+
+textarea{
+  min-height:95px;
+}
+
+label{
+  display:block;
+  font-size:17px;
+  font-weight:900;
+  margin-top:6px;
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.grid4{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+}
+
+.total{
+  background:#f1f5f9;
+  border-radius:18px;
+  padding:12px 6px;
+  text-align:center;
+  border:1px solid #e2e8f0;
+}
+
+.total b{
+  display:block;
+  font-size:19px;
+}
+
+.total span{
+  font-size:14px;
+  color:#475569;
+}
+
+.target-card{
+  background:linear-gradient(135deg,#f97316,#ef4444,#be123c);
+  color:white;
+}
+
+.target-card input{
+  background:rgba(255,255,255,.95);
+  color:#111827;
+  border:none;
+}
+
+.target-card label{
+  color:white;
+}
+
+button{
+  width:100%;
+  border:0;
+  border-radius:18px;
+  padding:15px;
+  font-size:19px;
+  font-weight:900;
+  font-family:"Times New Roman", Times, serif;
+  margin-top:10px;
+  color:white;
+  background:#2563eb;
+}
+
+.good{background:#16a34a}
+.purple{background:#7c3aed}
+.light{background:#eef2ff;color:#1d4ed8}
+.danger{background:#fee2e2;color:#b91c1c}
+
+.section-note{
+  font-size:16px;
+  color:#64748b;
+  margin-top:-6px;
+  margin-bottom:12px;
+}
+
+.preview{
+  width:100%;
+  max-height:250px;
+  object-fit:contain;
+  border-radius:18px;
+  margin:10px 0;
+  background:#f1f5f9;
+  display:none;
+}
+
+.saved-food{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px solid #e5e7eb;
+}
+
+.saved-food:last-child{
+  border-bottom:none;
+}
+
+.saved-food b{
+  font-size:19px;
+}
+
+.meta{
+  font-size:15px;
+  color:#64748b;
+  margin-top:3px;
+}
+
+.small-btn{
+  width:auto;
+  padding:9px 12px;
+  margin:0;
+  font-size:15px;
+  border-radius:12px;
+}
+
+.food-log-item{
+  border-bottom:1px solid #e5e7eb;
+  padding:12px 0;
+}
+
+.food-log-item b{
+  font-size:19px;
+}
+
+.macro-heading{
+  background:#f8fafc;
+  padding:12px;
+  border-radius:16px;
+  margin:10px 0;
+  font-size:18px;
+  font-weight:900;
+  color:#334155;
+  text-align:center;
+}
+
+@media(max-width:420px){
+  body{padding:12px}
+  .main-title{font-size:34px}
+  .grid4{gap:6px}
+  .total b{font-size:17px}
+  .total span{font-size:12px}
+}
 </style>
 </head>
+
 <body>
 <div class="app">
-<h1>Macro Logger</h1>
-<div class="sub">Scan labels, add common foods, track daily macros.</div>
+
+<div class="main-title">🍽️ MACRO LOGGER 💪</div>
 
 <div class="card">
-<h2>Today</h2>
-<input id="date" type="date">
-<div class="grid4">
-<div class="total"><b id="tCal">0</b><span>Cal</span></div>
-<div class="total"><b id="tC">0g</b><span>Carbs</span></div>
-<div class="total"><b id="tP">0g</b><span>Protein</span></div>
-<div class="total"><b id="tF">0g</b><span>Fat</span></div>
-</div>
+  <h2 class="icon-title">📅 Today</h2>
+  <label>Date</label>
+  <input id="date" type="date">
+
+  <div class="grid4">
+    <div class="total"><b id="tCal">0</b><span>Cal</span></div>
+    <div class="total"><b id="tC">0g</b><span>Carbs</span></div>
+    <div class="total"><b id="tP">0g</b><span>Protein</span></div>
+    <div class="total"><b id="tF">0g</b><span>Fat</span></div>
+  </div>
 </div>
 
-<div class="card">
-<h2>Add Food</h2>
-<input id="food" placeholder="Food name">
-<div class="row">
-<input id="servings" type="number" step="0.1" value="1" placeholder="Servings">
-<input id="note" placeholder="Serving note">
-</div>
-<div class="row">
-<input id="cal" type="number" placeholder="Calories">
-<input id="carbs" type="number" step="0.1" placeholder="Carbs g">
-<input id="protein" type="number" step="0.1" placeholder="Protein g">
-<input id="fat" type="number" step="0.1" placeholder="Fat g">
-</div>
-<button class="good" onclick="addFood()">Add Food</button>
-</div>
-
-<div class="card">
-<h2>Common Foods</h2>
-<input id="search" placeholder="Search banana, rice, chicken..." oninput="showFoods()">
-<div id="foods" class="chips"></div>
-</div>
-
-<div class="card">
-<h2>Scan Nutrition Label</h2>
-<p class="small">Use a clear close-up photo. Check values before adding.</p>
-<input id="photo" type="file" accept="image/*" capture="environment">
-<img id="preview" class="preview">
-<button onclick="scanLabel()">Scan Label</button>
-<p id="status" class="small"></p>
-<textarea id="ocrText" placeholder="Detected text appears here."></textarea>
-<button class="light" onclick="parseText()">Parse Text</button>
+<div class="card target-card">
+  <h2>🎯 Daily Macro Targets</h2>
+  <div class="row">
+    <div>
+      <label>Calories Target</label>
+      <input id="goalCal" type="number" value="2250">
+    </div>
+    <div>
+      <label>Carbs Target g</label>
+      <input id="goalC" type="number" value="120">
+    </div>
+    <div>
+      <label>Protein Target g</label>
+      <input id="goalP" type="number" value="190">
+    </div>
+    <div>
+      <label>Fat Target g</label>
+      <input id="goalF" type="number" value="55">
+    </div>
+  </div>
+  <button class="purple" onclick="saveTargets()">Save Targets</button>
 </div>
 
 <div class="card">
-<h2>Food Log</h2>
-<div id="log"></div>
-<button class="light" onclick="exportCSV()">Export CSV</button>
-<button class="danger" onclick="clearDay()">Clear Today</button>
+  <h2>➕ Add Food</h2>
+
+  <label>Food Name</label>
+  <input id="food" placeholder="Example: Banana / Chicken / Belvita">
+
+  <div class="row">
+    <div>
+      <label>Servings</label>
+      <input id="servings" type="number" step="0.1" value="1">
+    </div>
+    <div>
+      <label>Serving Note</label>
+      <input id="note" placeholder="1 pack / 100g / 1 cup">
+    </div>
+  </div>
+
+  <div class="macro-heading">Enter macro values per serving below</div>
+
+  <div class="row">
+    <div>
+      <label>Calories</label>
+      <input id="cal" type="number" placeholder="230">
+    </div>
+    <div>
+      <label>Carbs g</label>
+      <input id="carbs" type="number" step="0.1" placeholder="36">
+    </div>
+    <div>
+      <label>Protein g</label>
+      <input id="protein" type="number" step="0.1" placeholder="3">
+    </div>
+    <div>
+      <label>Fat g</label>
+      <input id="fat" type="number" step="0.1" placeholder="8">
+    </div>
+  </div>
+
+  <button class="good" onclick="addFood()">Add Food</button>
 </div>
+
+<div class="card">
+  <h2>⭐ My Saved Foods</h2>
+  <div class="section-note">Add your own frequently eaten foods and tap them later to fill the Add Food section.</div>
+
+  <label>Saved Item Name</label>
+  <input id="savedName" placeholder="Example: My protein shake">
+
+  <div class="row">
+    <div>
+      <label>Calories</label>
+      <input id="savedCal" type="number">
+    </div>
+    <div>
+      <label>Carbs g</label>
+      <input id="savedC" type="number" step="0.1">
+    </div>
+    <div>
+      <label>Protein g</label>
+      <input id="savedP" type="number" step="0.1">
+    </div>
+    <div>
+      <label>Fat g</label>
+      <input id="savedF" type="number" step="0.1">
+    </div>
+  </div>
+
+  <button class="purple" onclick="saveCustomFood()">Save This Item</button>
+
+  <div id="savedFoods"></div>
+</div>
+
+<div class="card">
+  <h2>📸 Scan Nutrition Label</h2>
+  <div class="section-note">Take a close, straight, bright photo. Review the detected values before adding.</div>
+
+  <input id="photo" type="file" accept="image/*" capture="environment">
+  <img id="preview" class="preview">
+
+  <button onclick="scanLabel()">Scan Label</button>
+  <p id="status" class="section-note"></p>
+
+  <textarea id="ocrText" placeholder="Detected text appears here."></textarea>
+  <button class="light" onclick="parseText()">Parse Text</button>
+</div>
+
+<div class="card">
+  <h2>📒 Food Log</h2>
+  <div id="log"></div>
+  <button class="light" onclick="exportCSV()">Export CSV</button>
+  <button class="danger" onclick="clearDay()">Clear Today</button>
+</div>
+
 </div>
 
 <script>
-const $=id=>document.getElementById(id);
-$('date').value=new Date().toISOString().slice(0,10);
+const $ = id => document.getElementById(id);
 
-const common=[
-{name:"Banana, large",note:"1 large",cal:130,c:33,p:1.6,f:0.5},
-{name:"Belvita biscuits",note:"1 pack",cal:230,c:36,p:3,f:8},
-{name:"Chicken breast",note:"100 g cooked",cal:165,c:0,p:31,f:3.6},
-{name:"Chicken 65",note:"100 g estimate",cal:220,c:8,p:18,f:12},
-{name:"Egg",note:"1 large",cal:72,c:0.4,p:6.3,f:5},
-{name:"Egg whites",note:"100 g",cal:52,c:0.7,p:11,f:0.2},
-{name:"White rice",note:"1 cup cooked",cal:205,c:45,p:4.3,f:0.4},
-{name:"Basmati rice",note:"1 cup cooked",cal:190,c:39,p:4,f:0.5},
-{name:"Oats",note:"40 g dry",cal:150,c:27,p:5,f:3},
-{name:"Greek yogurt",note:"170 g nonfat",cal:100,c:6,p:17,f:0},
-{name:"Whey protein",note:"1 scoop",cal:120,c:3,p:24,f:1.5},
-{name:"Chapati",note:"1 medium",cal:120,c:18,p:3,f:3},
-{name:"Dal",note:"1 cup estimate",cal:230,c:35,p:18,f:1},
-{name:"Paneer",note:"100 g estimate",cal:265,c:3,p:18,f:20},
-{name:"Chicken biryani",note:"1 cup estimate",cal:380,c:45,p:18,f:14}
-];
+$('date').value = new Date().toISOString().slice(0,10);
 
-const key=()=>`macro_${$('date').value}`;
-const getLog=()=>JSON.parse(localStorage.getItem(key())||"[]");
-const saveLog=x=>{localStorage.setItem(key(),JSON.stringify(x));render();};
-const num=id=>parseFloat($(id).value)||0;
-const round=x=>Math.round(x*10)/10;
+const num = id => parseFloat($(id).value) || 0;
+const round = x => Math.round(x * 10) / 10;
 
-$('date').addEventListener('change',render);
+const logKey = () => "macro_log_" + $('date').value;
+const targetKey = "macro_targets";
+const savedKey = "custom_saved_foods";
 
-$('photo').addEventListener('change',e=>{
-const file=e.target.files[0];
-if(!file)return;
-$('preview').src=URL.createObjectURL(file);
-$('preview').style.display='block';
+const getLog = () => JSON.parse(localStorage.getItem(logKey()) || "[]");
+const saveLog = log => {
+  localStorage.setItem(logKey(), JSON.stringify(log));
+  render();
+};
+
+const getSavedFoods = () => JSON.parse(localStorage.getItem(savedKey) || "[]");
+const setSavedFoods = foods => {
+  localStorage.setItem(savedKey, JSON.stringify(foods));
+  renderSavedFoods();
+};
+
+$('date').addEventListener('change', render);
+
+$('photo').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if(!file) return;
+  $('preview').src = URL.createObjectURL(file);
+  $('preview').style.display = "block";
 });
 
-function setForm(x){
-$('food').value=x.name;
-$('note').value=x.note||"";
-$('servings').value=1;
-$('cal').value=x.cal||0;
-$('carbs').value=x.c||0;
-$('protein').value=x.p||0;
-$('fat').value=x.f||0;
+function saveTargets(){
+  const targets = {
+    cal:num('goalCal'),
+    c:num('goalC'),
+    p:num('goalP'),
+    f:num('goalF')
+  };
+  localStorage.setItem(targetKey, JSON.stringify(targets));
+  alert("Targets saved");
+  render();
 }
 
-function showFoods(){
-const q=$('search').value.toLowerCase();
-const list=common.filter(x=>x.name.toLowerCase().includes(q)).slice(0,12);
-$('foods').innerHTML=list.map(x=>`<button class="chip" onclick="setForm(common[${common.indexOf(x)}])">${x.name}</button>`).join("");
+function loadTargets(){
+  const t = JSON.parse(localStorage.getItem(targetKey) || "{}");
+  if(t.cal) $('goalCal').value = t.cal;
+  if(t.c) $('goalC').value = t.c;
+  if(t.p) $('goalP').value = t.p;
+  if(t.f) $('goalF').value = t.f;
 }
-showFoods();
+
+function setForm(item){
+  $('food').value = item.name;
+  $('note').value = item.note || "1 serving";
+  $('servings').value = 1;
+  $('cal').value = item.cal || 0;
+  $('carbs').value = item.c || 0;
+  $('protein').value = item.p || 0;
+  $('fat').value = item.f || 0;
+  window.scrollTo({top:350,behavior:"smooth"});
+}
 
 function addFood(){
-const name=$('food').value.trim();
-if(!name){alert("Enter food name");return;}
-const s=num('servings')||1;
-const item={
-name:name+($('note').value?` (${$('note').value})`:""),
-cal:Math.round(num('cal')*s),
-c:round(num('carbs')*s),
-p:round(num('protein')*s),
-f:round(num('fat')*s)
-};
-const log=getLog();
-log.push(item);
-saveLog(log);
-['food','note','cal','carbs','protein','fat'].forEach(id=>$(id).value="");
-$('servings').value=1;
+  const name = $('food').value.trim();
+  if(!name){
+    alert("Enter food name");
+    return;
+  }
+
+  const s = num('servings') || 1;
+
+  const item = {
+    name: name + ($('note').value ? " (" + $('note').value + ")" : ""),
+    cal: Math.round(num('cal') * s),
+    c: round(num('carbs') * s),
+    p: round(num('protein') * s),
+    f: round(num('fat') * s)
+  };
+
+  const log = getLog();
+  log.push(item);
+  saveLog(log);
+
+  ['food','note','cal','carbs','protein','fat'].forEach(id => $(id).value = "");
+  $('servings').value = 1;
 }
 
-function delFood(i){
-const log=getLog();
-log.splice(i,1);
-saveLog(log);
+function saveCustomFood(){
+  const name = $('savedName').value.trim();
+  if(!name){
+    alert("Enter saved food name");
+    return;
+  }
+
+  const item = {
+    name:name,
+    note:"1 serving",
+    cal:Math.round(num('savedCal')),
+    c:round(num('savedC')),
+    p:round(num('savedP')),
+    f:round(num('savedF'))
+  };
+
+  const foods = getSavedFoods();
+  foods.push(item);
+  setSavedFoods(foods);
+
+  ['savedName','savedCal','savedC','savedP','savedF'].forEach(id => $(id).value = "");
+}
+
+function deleteSavedFood(i){
+  const foods = getSavedFoods();
+  foods.splice(i,1);
+  setSavedFoods(foods);
+}
+
+function renderSavedFoods(){
+  const foods = getSavedFoods();
+
+  if(!foods.length){
+    $('savedFoods').innerHTML = "<p class='section-note'>No saved foods yet.</p>";
+    return;
+  }
+
+  $('savedFoods').innerHTML = foods.map((x,i) => `
+    <div class="saved-food">
+      <div onclick='setForm(${JSON.stringify(x)})'>
+        <b>🍱 ${x.name}</b>
+        <div class="meta">${x.cal} cal • C ${x.c}g • P ${x.p}g • F ${x.f}g</div>
+      </div>
+      <button class="small-btn danger" onclick="deleteSavedFood(${i})">Delete</button>
+    </div>
+  `).join("");
+}
+
+function deleteFood(i){
+  const log = getLog();
+  log.splice(i,1);
+  saveLog(log);
 }
 
 function render(){
-const log=getLog();
-const t=log.reduce((a,x)=>({cal:a.cal+x.cal,c:a.c+x.c,p:a.p+x.p,f:a.f+x.f}),{cal:0,c:0,p:0,f:0});
-$('tCal').textContent=Math.round(t.cal);
-$('tC').textContent=round(t.c)+"g";
-$('tP').textContent=round(t.p)+"g";
-$('tF').textContent=round(t.f)+"g";
-$('log').innerHTML=log.length?log.map((x,i)=>`
-<div class="food">
-<div><b>${x.name}</b><div class="meta">${x.cal} cal • C ${x.c}g • P ${x.p}g • F ${x.f}g</div></div>
-<button class="x" onclick="delFood(${i})">✕</button>
-</div>`).join(""):`<p class="small">No food added yet.</p>`;
+  const log = getLog();
+
+  const total = log.reduce((a,x) => ({
+    cal:a.cal + x.cal,
+    c:a.c + x.c,
+    p:a.p + x.p,
+    f:a.f + x.f
+  }), {cal:0,c:0,p:0,f:0});
+
+  $('tCal').textContent = Math.round(total.cal);
+  $('tC').textContent = round(total.c) + "g";
+  $('tP').textContent = round(total.p) + "g";
+  $('tF').textContent = round(total.f) + "g";
+
+  if(!log.length){
+    $('log').innerHTML = "<p class='section-note'>No food added yet.</p>";
+    return;
+  }
+
+  $('log').innerHTML = log.map((x,i) => `
+    <div class="food-log-item">
+      <b>🍽️ ${x.name}</b>
+      <div class="meta">${x.cal} cal • Carbs ${x.c}g • Protein ${x.p}g • Fat ${x.f}g</div>
+      <button class="small-btn danger" onclick="deleteFood(${i})">Remove</button>
+    </div>
+  `).join("");
 }
 
-function match(text,patterns){
-for(const p of patterns){
-const m=text.match(p);
-if(m)return parseFloat(m[1]);
-}
-return 0;
+function match(text, patterns){
+  for(const p of patterns){
+    const m = text.match(p);
+    if(m) return parseFloat(m[1]);
+  }
+  return 0;
 }
 
 function parseText(){
-const raw=$('ocrText').value;
-const t=raw.replace(/\n/g," ").replace(/\s+/g," ").toLowerCase();
-const cal=match(t,[/calories\s*(\d{1,4})/,/energy\s*(\d{1,4})\s*k?cal/]);
-const c=match(t,[/total carbohydrate\s*(\d{1,3}(?:\.\d+)?)\s*g/,/carbohydrate\s*(\d{1,3}(?:\.\d+)?)\s*g/,/carbs?\s*(\d{1,3}(?:\.\d+)?)\s*g/]);
-const p=match(t,[/protein\s*(\d{1,3}(?:\.\d+)?)\s*g/]);
-const f=match(t,[/total fat\s*(\d{1,3}(?:\.\d+)?)\s*g/,/\bfat\s*(\d{1,3}(?:\.\d+)?)\s*g/]);
-setForm({name:"Scanned food",note:"1 serving",cal,c,p,f});
+  const raw = $('ocrText').value;
+  const text = raw.replace(/\n/g," ").replace(/\s+/g," ").toLowerCase();
+
+  const cal = match(text, [
+    /calories\s*(\d{1,4})/,
+    /energy\s*(\d{1,4})\s*k?cal/
+  ]);
+
+  const c = match(text, [
+    /total carbohydrate\s*(\d{1,3}(?:\.\d+)?)\s*g/,
+    /carbohydrate\s*(\d{1,3}(?:\.\d+)?)\s*g/,
+    /carbs?\s*(\d{1,3}(?:\.\d+)?)\s*g/
+  ]);
+
+  const p = match(text, [
+    /protein\s*(\d{1,3}(?:\.\d+)?)\s*g/
+  ]);
+
+  const f = match(text, [
+    /total fat\s*(\d{1,3}(?:\.\d+)?)\s*g/,
+    /\bfat\s*(\d{1,3}(?:\.\d+)?)\s*g/
+  ]);
+
+  setForm({
+    name:"Scanned food",
+    note:"1 serving",
+    cal:cal,
+    c:c,
+    p:p,
+    f:f
+  });
 }
 
 async function scanLabel(){
-const file=$('photo').files[0];
-if(!file){alert("Choose/take a photo first");return;}
-$('status').textContent="Scanning... this may take 10-20 seconds.";
-try{
-const result=await Tesseract.recognize(file,'eng');
-$('ocrText').value=result.data.text;
-$('status').textContent="Scan done. Check values before adding.";
-parseText();
-}catch(e){
-$('status').textContent="Scan failed. Try a clearer photo or paste text manually.";
-}
+  const file = $('photo').files[0];
+
+  if(!file){
+    alert("Choose or take a photo first");
+    return;
+  }
+
+  $('status').textContent = "Scanning... this may take 10–20 seconds.";
+
+  try{
+    const result = await Tesseract.recognize(file,'eng');
+    $('ocrText').value = result.data.text;
+    $('status').textContent = "Scan done. Check detected values before adding.";
+    parseText();
+  }catch(e){
+    $('status').textContent = "Scan failed. Try a clearer photo or type the label manually.";
+  }
 }
 
 function exportCSV(){
-const log=getLog();
-let csv="Food,Calories,Carbs,Protein,Fat\n";
-log.forEach(x=>csv+=`"${x.name.replaceAll('"','""')}",${x.cal},${x.c},${x.p},${x.f}\n`);
-const a=document.createElement("a");
-a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));
-a.download=`macro_${$('date').value}.csv`;
-a.click();
+  const log = getLog();
+  let csv = "Food,Calories,Carbs,Protein,Fat\n";
+
+  log.forEach(x => {
+    csv += `"${x.name.replaceAll('"','""')}",${x.cal},${x.c},${x.p},${x.f}\n`;
+  });
+
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([csv],{type:"text/csv"}));
+  a.download = "macro_log_" + $('date').value + ".csv";
+  a.click();
 }
 
 function clearDay(){
-if(confirm("Clear today's log?"))saveLog([]);
+  if(confirm("Clear today's food log?")){
+    saveLog([]);
+  }
 }
 
+loadTargets();
 render();
+renderSavedFoods();
 </script>
+
 </body>
 </html>
