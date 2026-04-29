@@ -5,28 +5,27 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MACRO LOGGER</title>
 
-<link rel="apple-touch-icon" href="icon.png">
-<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.PNG">
+<link rel="icon" type="image/png" href="icon.PNG">
 
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 
 <style>
 *{box-sizing:border-box}
 
+html,body{
+  overflow-x:hidden;
+}
+
 :root{
   --text:#0f172a;
   --muted:#64748b;
-  --line:#dbe4f0;
-  --bg1:#020617;
-  --bg2:#111827;
-  --white:#ffffff;
 }
 
 body{
   margin:0;
   padding:18px;
-  background:
-    radial-gradient(circle at top left,#1e293b 0%,#0f172a 42%,#020617 100%);
+  background:radial-gradient(circle at top,#243b67 0%,#111827 45%,#020617 100%);
   color:var(--text);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 }
@@ -51,34 +50,30 @@ body{
 }
 
 .card{
-  background:rgba(255,255,255,.96);
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(240,247,255,.96));
   border-radius:30px;
   padding:22px;
   margin:18px 0;
-  border:1px solid rgba(255,255,255,.75);
-  box-shadow:0 20px 45px rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 22px 45px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.8);
   overflow:hidden;
 }
 
 .card-blue{
-  background:
-  linear-gradient(135deg,#eff6ff,#ffffff);
+  background:linear-gradient(135deg,#eef7ff,#ffffff);
   border:1px solid #bfdbfe;
 }
 
 .card-red{
-  background:
-  linear-gradient(135deg,#ffedd5,#fecaca,#ffffff);
+  background:linear-gradient(135deg,#ffedd5,#fecaca,#ffffff);
 }
 
 .card-green{
-  background:
-  linear-gradient(135deg,#ecfdf5,#ffffff);
+  background:linear-gradient(135deg,#ecfdf5,#ffffff);
 }
 
 .card-purple{
-  background:
-  linear-gradient(135deg,#f5f3ff,#ffffff);
+  background:linear-gradient(135deg,#f5f3ff,#ffffff);
 }
 
 .card h2{
@@ -109,6 +104,8 @@ input,textarea{
   background:white;
   color:#0f172a;
   outline:none;
+  appearance:none;
+  -webkit-appearance:none;
 }
 
 input::placeholder,
@@ -121,9 +118,25 @@ input:focus,textarea:focus{
   box-shadow:0 0 0 4px rgba(96,165,250,.16);
 }
 
+.date-box{
+  width:100%;
+  padding:0;
+  overflow:hidden;
+}
+
 #date{
+  width:100%;
+  max-width:100%;
+  height:56px;
+  display:block;
   text-align:center;
-  height:58px;
+  border-radius:18px;
+  padding:0 12px;
+}
+
+textarea{
+  min-height:95px;
+  resize:vertical;
 }
 
 .row{
@@ -139,8 +152,9 @@ button{
   padding:15px;
   font-size:17px;
   font-weight:950;
-  color:white;
+  font-family:inherit;
   margin-top:12px;
+  color:white;
   background:linear-gradient(135deg,#2563eb,#1d4ed8);
   box-shadow:0 10px 24px rgba(37,99,235,.28);
 }
@@ -190,15 +204,12 @@ button:active{
 .ring{
   --p:0%;
   --ring:#22c55e;
-  width:118px;
-  height:118px;
+  width:108px;
+  height:108px;
   border-radius:50%;
-  background:
-    conic-gradient(var(--ring) var(--p),#e5e7eb 0);
+  background:conic-gradient(var(--ring) var(--p),#e5e7eb 0);
   padding:10px;
-  box-shadow:
-    0 0 18px rgba(59,130,246,.10),
-    0 0 22px rgba(0,0,0,.08);
+  box-shadow:0 0 18px rgba(59,130,246,.10),0 0 22px rgba(0,0,0,.08);
 }
 
 .ring-inner{
@@ -214,7 +225,7 @@ button:active{
 }
 
 .ring-inner b{
-  font-size:20px;
+  font-size:18px;
   font-weight:950;
   color:#0f172a;
 }
@@ -308,8 +319,8 @@ button:active{
   body{padding:12px}
   .hero{font-size:28px}
   .ring{
-    width:108px;
-    height:108px;
+    width:104px;
+    height:104px;
   }
 }
 </style>
