@@ -89,6 +89,22 @@ input,textarea{
   -webkit-appearance:none;
 }
 
+
+select{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  display:block;
+  border:1.5px solid #cbd5e1;
+  border-radius:18px;
+  padding:15px;
+  font-size:17px;
+  font-family:inherit;
+  background:white;
+  color:#0f172a;
+  outline:none;
+}
+
 input::placeholder,textarea::placeholder{color:#94a3b8}
 
 input:focus,textarea:focus{
@@ -400,6 +416,23 @@ button:active{transform:scale(.97)}
   <button class="good" onclick="addFood()">Add Food</button>
 </div>
 
+
+<div class="card card-blue">
+  <h2>🔍 Food Database</h2>
+  <div class="note">Search common U.S. foods from your local foods.json database. Tap Use to fill the Add Food section.</div>
+
+  <label>Search Food</label>
+  <input id="dbSearch" placeholder="Search milk, apple, chicken, rice, chipotle..." oninput="renderFoodDatabase()">
+
+  <label>Category</label>
+  <select id="dbCategory" onchange="renderFoodDatabase()">
+    <option value="">All Categories</option>
+  </select>
+
+  <p id="dbStatus" class="note"></p>
+  <div id="foodDatabaseList"></div>
+</div>
+
 <div class="card card-purple">
   <h2>⭐ My Saved Foods</h2>
   <div class="note">Save foods you eat often. Tap a saved item to fill the Add Food section.</div>
@@ -703,6 +736,89 @@ function parseText(){
   setForm({name:"Scanned food",note:"1 serving",cal:cal,c:c,p:p,f:f});
 }
 
+
+let foodDatabase = [];
+
+async function loadFoodDatabase(){
+  try{
+    const res = await fetch("foods.json");
+    if(!res.ok) throw new Error("Could not load foods.json");
+
+    foodDatabase = await res.json();
+    buildFoodCategories();
+    renderFoodDatabase();
+  }catch(e){
+    foodDatabase = [];
+    if($('dbStatus')){
+      $('dbStatus').textContent = "Food database could not load. Make sure foods.json is in the same folder as index.html.";
+    }
+  }
+}
+
+function buildFoodCategories(){
+  const select = $('dbCategory');
+  if(!select) return;
+
+  const categories = [...new Set(foodDatabase.map(x => x.cat).filter(Boolean))].sort();
+  select.innerHTML = '<option value="">All Categories</option>' + categories.map(cat =>
+    `<option value="${cat}">${cat}</option>`
+  ).join("");
+}
+
+function useDatabaseFood(item){
+  $('food').value = item.name;
+  $('note').value = item.serving || "1 serving";
+  $('servings').value = 1;
+  $('cal').value = item.cal || 0;
+  $('carbs').value = item.c || 0;
+  $('protein').value = item.p || 0;
+  $('fat').value = item.f || 0;
+
+  window.scrollTo({top:420,behavior:"smooth"});
+}
+
+function renderFoodDatabase(){
+  if(!$('foodDatabaseList')) return;
+
+  const q = ($('dbSearch')?.value || "").toLowerCase().trim();
+  const cat = $('dbCategory')?.value || "";
+
+  let results = foodDatabase.filter(item => {
+    const searchable = `${item.name} ${item.serving} ${item.cat}`.toLowerCase();
+    const matchesSearch = !q || searchable.includes(q);
+    const matchesCategory = !cat || item.cat === cat;
+    return matchesSearch && matchesCategory;
+  });
+
+  results = results.slice(0, 60);
+
+  if(!foodDatabase.length){
+    $('foodDatabaseList').innerHTML = "";
+    return;
+  }
+
+  $('dbStatus').textContent = results.length
+    ? `Showing ${results.length} result${results.length === 1 ? "" : "s"}.`
+    : "No food found. Try a simpler search like milk, apple, rice, chicken, oats, or pizza.";
+
+  if(!results.length){
+    $('foodDatabaseList').innerHTML = "";
+    return;
+  }
+
+  $('foodDatabaseList').innerHTML = results.map(item => `
+    <div class="saved-food">
+      <div onclick='useDatabaseFood(${JSON.stringify(item).replace(/'/g, "&apos;")})'>
+        <b>🍽️ ${item.name}</b>
+        <div class="meta">${item.cat} • ${item.serving}</div>
+        <div class="meta">${item.cal} cal • C ${item.c}g • P ${item.p}g • F ${item.f}g</div>
+      </div>
+      <button class="small-btn good" onclick='useDatabaseFood(${JSON.stringify(item).replace(/'/g, "&apos;")})'>Use</button>
+    </div>
+  `).join("");
+}
+
+
 async function scanLabel(){
   const file = $('photo').files[0];
 
@@ -769,6 +885,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   loadTargets();
+  loadFoodDatabase();
   render();
   renderSavedFoods();
 });

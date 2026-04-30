@@ -1,0 +1,2352 @@
+[
+  {
+    "cat": "Breakfast",
+    "name": "Egg, large",
+    "serving": "1 large egg",
+    "cal": 72,
+    "c": 0.4,
+    "p": 6.3,
+    "f": 4.8,
+    "id": 1
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Egg whites",
+    "serving": "3 large egg whites",
+    "cal": 51,
+    "c": 0.7,
+    "p": 10.8,
+    "f": 0.2,
+    "id": 2
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Scrambled eggs",
+    "serving": "2 large eggs",
+    "cal": 182,
+    "c": 1.6,
+    "p": 12.2,
+    "f": 14.2,
+    "id": 3
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Hard boiled eggs",
+    "serving": "2 large eggs",
+    "cal": 156,
+    "c": 1.2,
+    "p": 12.6,
+    "f": 10.6,
+    "id": 4
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Bacon",
+    "serving": "2 cooked slices",
+    "cal": 87,
+    "c": 0.2,
+    "p": 6.0,
+    "f": 6.8,
+    "id": 5
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Turkey bacon",
+    "serving": "2 slices",
+    "cal": 60,
+    "c": 0.6,
+    "p": 4.8,
+    "f": 4.2,
+    "id": 6
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Pork sausage links",
+    "serving": "2 links",
+    "cal": 170,
+    "c": 1.5,
+    "p": 8.0,
+    "f": 15.0,
+    "id": 7
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Turkey sausage links",
+    "serving": "2 links",
+    "cal": 112,
+    "c": 1.0,
+    "p": 11.0,
+    "f": 7.0,
+    "id": 8
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Oats, old fashioned dry",
+    "serving": "1/2 cup dry",
+    "cal": 150,
+    "c": 27,
+    "p": 5,
+    "f": 3,
+    "id": 9
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Oatmeal, cooked with water",
+    "serving": "1 cup cooked",
+    "cal": 154,
+    "c": 27.4,
+    "p": 6.0,
+    "f": 3.2,
+    "id": 10
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Instant oatmeal packet, plain",
+    "serving": "1 packet",
+    "cal": 100,
+    "c": 19,
+    "p": 4,
+    "f": 2,
+    "id": 11
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Instant oatmeal packet, flavored",
+    "serving": "1 packet",
+    "cal": 160,
+    "c": 32,
+    "p": 4,
+    "f": 2.5,
+    "id": 12
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Cream of wheat, cooked",
+    "serving": "1 cup cooked",
+    "cal": 133,
+    "c": 28,
+    "p": 4,
+    "f": 0.5,
+    "id": 13
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Granola",
+    "serving": "1/2 cup",
+    "cal": 226,
+    "c": 36,
+    "p": 5,
+    "f": 7,
+    "id": 14
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Pancakes, plain",
+    "serving": "2 medium pancakes",
+    "cal": 175,
+    "c": 28,
+    "p": 5,
+    "f": 5,
+    "id": 15
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Waffles, plain",
+    "serving": "2 frozen waffles",
+    "cal": 190,
+    "c": 30,
+    "p": 5,
+    "f": 6,
+    "id": 16
+  },
+  {
+    "cat": "Breakfast",
+    "name": "French toast",
+    "serving": "2 slices",
+    "cal": 300,
+    "c": 35,
+    "p": 12,
+    "f": 12,
+    "id": 17
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Hash browns",
+    "serving": "1 cup cooked",
+    "cal": 185,
+    "c": 26,
+    "p": 2.5,
+    "f": 8,
+    "id": 18
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Breakfast burrito, egg and cheese",
+    "serving": "1 burrito",
+    "cal": 305,
+    "c": 30,
+    "p": 13,
+    "f": 15,
+    "id": 19
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Bagel, plain",
+    "serving": "1 medium bagel",
+    "cal": 270,
+    "c": 53,
+    "p": 10,
+    "f": 1.5,
+    "id": 20
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Cream cheese",
+    "serving": "1 tbsp",
+    "cal": 51,
+    "c": 0.8,
+    "p": 0.9,
+    "f": 5.0,
+    "id": 21
+  },
+  {
+    "cat": "Breakfast",
+    "name": "English muffin",
+    "serving": "1 muffin",
+    "cal": 134,
+    "c": 26,
+    "p": 4.5,
+    "f": 1,
+    "id": 22
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Toast, white bread",
+    "serving": "1 slice",
+    "cal": 75,
+    "c": 14,
+    "p": 2.5,
+    "f": 1,
+    "id": 23
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Toast, whole wheat bread",
+    "serving": "1 slice",
+    "cal": 80,
+    "c": 14,
+    "p": 4,
+    "f": 1.2,
+    "id": 24
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Peanut butter",
+    "serving": "1 tbsp",
+    "cal": 95,
+    "c": 3.5,
+    "p": 4,
+    "f": 8,
+    "id": 25
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Jelly / jam",
+    "serving": "1 tbsp",
+    "cal": 50,
+    "c": 13,
+    "p": 0,
+    "f": 0,
+    "id": 26
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Honey",
+    "serving": "1 tbsp",
+    "cal": 64,
+    "c": 17,
+    "p": 0,
+    "f": 0,
+    "id": 27
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Maple syrup",
+    "serving": "1 tbsp",
+    "cal": 52,
+    "c": 13.4,
+    "p": 0,
+    "f": 0,
+    "id": 28
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Cereal, Cheerios",
+    "serving": "1 cup",
+    "cal": 140,
+    "c": 29,
+    "p": 5,
+    "f": 2.5,
+    "id": 29
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Cereal, Raisin Bran",
+    "serving": "1 cup",
+    "cal": 190,
+    "c": 47,
+    "p": 5,
+    "f": 1,
+    "id": 30
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Cereal, Frosted Flakes",
+    "serving": "1 cup",
+    "cal": 140,
+    "c": 34,
+    "p": 2,
+    "f": 0,
+    "id": 31
+  },
+  {
+    "cat": "Breakfast",
+    "name": "Cereal, granola type",
+    "serving": "1 cup",
+    "cal": 450,
+    "c": 75,
+    "p": 10,
+    "f": 12,
+    "id": 32
+  },
+  {
+    "cat": "Dairy",
+    "name": "Milk, whole",
+    "serving": "1 cup",
+    "cal": 149,
+    "c": 12,
+    "p": 8,
+    "f": 8,
+    "id": 33
+  },
+  {
+    "cat": "Dairy",
+    "name": "Milk, 2 percent",
+    "serving": "1 cup",
+    "cal": 122,
+    "c": 12,
+    "p": 8,
+    "f": 5,
+    "id": 34
+  },
+  {
+    "cat": "Dairy",
+    "name": "Milk, 1 percent",
+    "serving": "1 cup",
+    "cal": 102,
+    "c": 12,
+    "p": 8,
+    "f": 2.4,
+    "id": 35
+  },
+  {
+    "cat": "Dairy",
+    "name": "Milk, skim",
+    "serving": "1 cup",
+    "cal": 83,
+    "c": 12,
+    "p": 8.3,
+    "f": 0.2,
+    "id": 36
+  },
+  {
+    "cat": "Dairy",
+    "name": "Chocolate milk, lowfat",
+    "serving": "1 cup",
+    "cal": 190,
+    "c": 30,
+    "p": 8,
+    "f": 5,
+    "id": 37
+  },
+  {
+    "cat": "Dairy",
+    "name": "Greek yogurt, plain nonfat",
+    "serving": "170 g / 6 oz",
+    "cal": 100,
+    "c": 6,
+    "p": 17,
+    "f": 0,
+    "id": 38
+  },
+  {
+    "cat": "Dairy",
+    "name": "Greek yogurt, vanilla lowfat",
+    "serving": "170 g / 6 oz",
+    "cal": 140,
+    "c": 18,
+    "p": 14,
+    "f": 2,
+    "id": 39
+  },
+  {
+    "cat": "Dairy",
+    "name": "Yogurt, plain whole milk",
+    "serving": "1 cup",
+    "cal": 149,
+    "c": 11.4,
+    "p": 8.5,
+    "f": 8,
+    "id": 40
+  },
+  {
+    "cat": "Dairy",
+    "name": "Cottage cheese, lowfat",
+    "serving": "1/2 cup",
+    "cal": 90,
+    "c": 5,
+    "p": 13,
+    "f": 2.5,
+    "id": 41
+  },
+  {
+    "cat": "Dairy",
+    "name": "String cheese, mozzarella",
+    "serving": "1 stick",
+    "cal": 80,
+    "c": 1,
+    "p": 7,
+    "f": 6,
+    "id": 42
+  },
+  {
+    "cat": "Dairy",
+    "name": "Cheddar cheese",
+    "serving": "1 oz",
+    "cal": 114,
+    "c": 0.4,
+    "p": 7,
+    "f": 9.4,
+    "id": 43
+  },
+  {
+    "cat": "Dairy",
+    "name": "Mozzarella cheese, part skim",
+    "serving": "1 oz",
+    "cal": 72,
+    "c": 0.8,
+    "p": 7,
+    "f": 4.5,
+    "id": 44
+  },
+  {
+    "cat": "Dairy",
+    "name": "American cheese slice",
+    "serving": "1 slice",
+    "cal": 60,
+    "c": 2,
+    "p": 3,
+    "f": 4.5,
+    "id": 45
+  },
+  {
+    "cat": "Dairy",
+    "name": "Butter",
+    "serving": "1 tbsp",
+    "cal": 102,
+    "c": 0,
+    "p": 0.1,
+    "f": 11.5,
+    "id": 46
+  },
+  {
+    "cat": "Dairy",
+    "name": "Half and half",
+    "serving": "2 tbsp",
+    "cal": 40,
+    "c": 1.3,
+    "p": 1,
+    "f": 3.5,
+    "id": 47
+  },
+  {
+    "cat": "Dairy",
+    "name": "Sour cream",
+    "serving": "2 tbsp",
+    "cal": 60,
+    "c": 1.3,
+    "p": 0.7,
+    "f": 6,
+    "id": 48
+  },
+  {
+    "cat": "Dairy",
+    "name": "Ice cream, vanilla",
+    "serving": "1/2 cup",
+    "cal": 137,
+    "c": 16,
+    "p": 2.3,
+    "f": 7.3,
+    "id": 49
+  },
+  {
+    "cat": "Drinks",
+    "name": "Almond milk, unsweetened",
+    "serving": "1 cup",
+    "cal": 30,
+    "c": 1,
+    "p": 1,
+    "f": 2.5,
+    "id": 50
+  },
+  {
+    "cat": "Drinks",
+    "name": "Oat milk",
+    "serving": "1 cup",
+    "cal": 120,
+    "c": 16,
+    "p": 3,
+    "f": 5,
+    "id": 51
+  },
+  {
+    "cat": "Drinks",
+    "name": "Soy milk, unsweetened",
+    "serving": "1 cup",
+    "cal": 80,
+    "c": 4,
+    "p": 7,
+    "f": 4,
+    "id": 52
+  },
+  {
+    "cat": "Drinks",
+    "name": "Orange juice",
+    "serving": "1 cup",
+    "cal": 112,
+    "c": 26,
+    "p": 1.7,
+    "f": 0.5,
+    "id": 53
+  },
+  {
+    "cat": "Drinks",
+    "name": "Apple juice",
+    "serving": "1 cup",
+    "cal": 114,
+    "c": 28,
+    "p": 0.2,
+    "f": 0.3,
+    "id": 54
+  },
+  {
+    "cat": "Drinks",
+    "name": "Cranberry juice cocktail",
+    "serving": "1 cup",
+    "cal": 116,
+    "c": 31,
+    "p": 0,
+    "f": 0,
+    "id": 55
+  },
+  {
+    "cat": "Drinks",
+    "name": "Coffee, black",
+    "serving": "12 oz",
+    "cal": 5,
+    "c": 0,
+    "p": 0.5,
+    "f": 0,
+    "id": 56
+  },
+  {
+    "cat": "Drinks",
+    "name": "Latte, whole milk",
+    "serving": "12 oz",
+    "cal": 180,
+    "c": 18,
+    "p": 9,
+    "f": 9,
+    "id": 57
+  },
+  {
+    "cat": "Drinks",
+    "name": "Cappuccino, whole milk",
+    "serving": "12 oz",
+    "cal": 130,
+    "c": 13,
+    "p": 7,
+    "f": 6,
+    "id": 58
+  },
+  {
+    "cat": "Drinks",
+    "name": "Soda, regular cola",
+    "serving": "12 oz can",
+    "cal": 140,
+    "c": 39,
+    "p": 0,
+    "f": 0,
+    "id": 59
+  },
+  {
+    "cat": "Drinks",
+    "name": "Diet soda",
+    "serving": "12 oz can",
+    "cal": 0,
+    "c": 0,
+    "p": 0,
+    "f": 0,
+    "id": 60
+  },
+  {
+    "cat": "Drinks",
+    "name": "Sports drink",
+    "serving": "20 oz bottle",
+    "cal": 140,
+    "c": 36,
+    "p": 0,
+    "f": 0,
+    "id": 61
+  },
+  {
+    "cat": "Drinks",
+    "name": "Protein shake, ready to drink",
+    "serving": "11 oz bottle",
+    "cal": 160,
+    "c": 5,
+    "p": 30,
+    "f": 3,
+    "id": 62
+  },
+  {
+    "cat": "Drinks",
+    "name": "Whey protein powder",
+    "serving": "1 scoop",
+    "cal": 120,
+    "c": 3,
+    "p": 24,
+    "f": 1.5,
+    "id": 63
+  },
+  {
+    "cat": "Fruits",
+    "name": "Apple",
+    "serving": "1 medium",
+    "cal": 95,
+    "c": 25,
+    "p": 0.5,
+    "f": 0.3,
+    "id": 64
+  },
+  {
+    "cat": "Fruits",
+    "name": "Banana",
+    "serving": "1 medium",
+    "cal": 105,
+    "c": 27,
+    "p": 1.3,
+    "f": 0.4,
+    "id": 65
+  },
+  {
+    "cat": "Fruits",
+    "name": "Orange",
+    "serving": "1 medium",
+    "cal": 62,
+    "c": 15.4,
+    "p": 1.2,
+    "f": 0.2,
+    "id": 66
+  },
+  {
+    "cat": "Fruits",
+    "name": "Grapes",
+    "serving": "1 cup",
+    "cal": 104,
+    "c": 27,
+    "p": 1.1,
+    "f": 0.2,
+    "id": 67
+  },
+  {
+    "cat": "Fruits",
+    "name": "Strawberries",
+    "serving": "1 cup halves",
+    "cal": 49,
+    "c": 11.7,
+    "p": 1,
+    "f": 0.5,
+    "id": 68
+  },
+  {
+    "cat": "Fruits",
+    "name": "Blueberries",
+    "serving": "1 cup",
+    "cal": 84,
+    "c": 21,
+    "p": 1.1,
+    "f": 0.5,
+    "id": 69
+  },
+  {
+    "cat": "Fruits",
+    "name": "Raspberries",
+    "serving": "1 cup",
+    "cal": 64,
+    "c": 14.7,
+    "p": 1.5,
+    "f": 0.8,
+    "id": 70
+  },
+  {
+    "cat": "Fruits",
+    "name": "Blackberries",
+    "serving": "1 cup",
+    "cal": 62,
+    "c": 14,
+    "p": 2,
+    "f": 0.7,
+    "id": 71
+  },
+  {
+    "cat": "Fruits",
+    "name": "Pineapple",
+    "serving": "1 cup chunks",
+    "cal": 82,
+    "c": 21.7,
+    "p": 0.9,
+    "f": 0.2,
+    "id": 72
+  },
+  {
+    "cat": "Fruits",
+    "name": "Mango",
+    "serving": "1 cup pieces",
+    "cal": 99,
+    "c": 25,
+    "p": 1.4,
+    "f": 0.6,
+    "id": 73
+  },
+  {
+    "cat": "Fruits",
+    "name": "Watermelon",
+    "serving": "1 cup diced",
+    "cal": 46,
+    "c": 11.5,
+    "p": 0.9,
+    "f": 0.2,
+    "id": 74
+  },
+  {
+    "cat": "Fruits",
+    "name": "Cantaloupe",
+    "serving": "1 cup diced",
+    "cal": 53,
+    "c": 13,
+    "p": 1.3,
+    "f": 0.3,
+    "id": 75
+  },
+  {
+    "cat": "Fruits",
+    "name": "Peach",
+    "serving": "1 medium",
+    "cal": 59,
+    "c": 14,
+    "p": 1.4,
+    "f": 0.4,
+    "id": 76
+  },
+  {
+    "cat": "Fruits",
+    "name": "Pear",
+    "serving": "1 medium",
+    "cal": 101,
+    "c": 27,
+    "p": 0.6,
+    "f": 0.2,
+    "id": 77
+  },
+  {
+    "cat": "Fruits",
+    "name": "Plum",
+    "serving": "1 medium",
+    "cal": 30,
+    "c": 7.5,
+    "p": 0.5,
+    "f": 0.2,
+    "id": 78
+  },
+  {
+    "cat": "Fruits",
+    "name": "Kiwi",
+    "serving": "1 fruit",
+    "cal": 42,
+    "c": 10,
+    "p": 0.8,
+    "f": 0.4,
+    "id": 79
+  },
+  {
+    "cat": "Fruits",
+    "name": "Avocado",
+    "serving": "1/2 medium",
+    "cal": 120,
+    "c": 6,
+    "p": 1.5,
+    "f": 11,
+    "id": 80
+  },
+  {
+    "cat": "Fruits",
+    "name": "Dates, Medjool",
+    "serving": "2 dates",
+    "cal": 133,
+    "c": 36,
+    "p": 0.8,
+    "f": 0,
+    "id": 81
+  },
+  {
+    "cat": "Fruits",
+    "name": "Raisins",
+    "serving": "1/4 cup",
+    "cal": 120,
+    "c": 32,
+    "p": 1,
+    "f": 0,
+    "id": 82
+  },
+  {
+    "cat": "Fruits",
+    "name": "Fruit cup in juice",
+    "serving": "1 cup",
+    "cal": 100,
+    "c": 25,
+    "p": 1,
+    "f": 0,
+    "id": 83
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Broccoli, cooked",
+    "serving": "1 cup",
+    "cal": 55,
+    "c": 11,
+    "p": 3.7,
+    "f": 0.6,
+    "id": 84
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Spinach, raw",
+    "serving": "2 cups",
+    "cal": 14,
+    "c": 2.2,
+    "p": 1.7,
+    "f": 0.2,
+    "id": 85
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Spinach, cooked",
+    "serving": "1 cup",
+    "cal": 41,
+    "c": 6.8,
+    "p": 5.3,
+    "f": 0.5,
+    "id": 86
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Salad mix",
+    "serving": "2 cups",
+    "cal": 20,
+    "c": 4,
+    "p": 1,
+    "f": 0,
+    "id": 87
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Romaine lettuce",
+    "serving": "2 cups",
+    "cal": 16,
+    "c": 3,
+    "p": 1,
+    "f": 0,
+    "id": 88
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Tomato",
+    "serving": "1 medium",
+    "cal": 22,
+    "c": 4.8,
+    "p": 1.1,
+    "f": 0.2,
+    "id": 89
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Cucumber",
+    "serving": "1 cup slices",
+    "cal": 16,
+    "c": 3.8,
+    "p": 0.7,
+    "f": 0.1,
+    "id": 90
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Carrots",
+    "serving": "1 cup chopped",
+    "cal": 52,
+    "c": 12,
+    "p": 1.2,
+    "f": 0.3,
+    "id": 91
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Baby carrots",
+    "serving": "10 pieces",
+    "cal": 35,
+    "c": 8,
+    "p": 0.6,
+    "f": 0.1,
+    "id": 92
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Corn",
+    "serving": "1 cup",
+    "cal": 143,
+    "c": 31,
+    "p": 5,
+    "f": 2,
+    "id": 93
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Peas",
+    "serving": "1 cup",
+    "cal": 117,
+    "c": 21,
+    "p": 8,
+    "f": 0.6,
+    "id": 94
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Green beans",
+    "serving": "1 cup",
+    "cal": 44,
+    "c": 10,
+    "p": 2.4,
+    "f": 0.4,
+    "id": 95
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Asparagus",
+    "serving": "1 cup",
+    "cal": 27,
+    "c": 5.2,
+    "p": 3,
+    "f": 0.2,
+    "id": 96
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Bell pepper",
+    "serving": "1 medium",
+    "cal": 31,
+    "c": 7,
+    "p": 1,
+    "f": 0.3,
+    "id": 97
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Onion",
+    "serving": "1 medium",
+    "cal": 44,
+    "c": 10,
+    "p": 1.2,
+    "f": 0.1,
+    "id": 98
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Mushrooms",
+    "serving": "1 cup sliced",
+    "cal": 15,
+    "c": 2.3,
+    "p": 2.2,
+    "f": 0.2,
+    "id": 99
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Zucchini",
+    "serving": "1 cup sliced",
+    "cal": 19,
+    "c": 3.5,
+    "p": 1.4,
+    "f": 0.4,
+    "id": 100
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Cauliflower",
+    "serving": "1 cup chopped",
+    "cal": 27,
+    "c": 5.3,
+    "p": 2.1,
+    "f": 0.3,
+    "id": 101
+  },
+  {
+    "cat": "Vegetables",
+    "name": "Brussels sprouts",
+    "serving": "1 cup cooked",
+    "cal": 56,
+    "c": 11,
+    "p": 4,
+    "f": 0.8,
+    "id": 102
+  },
+  {
+    "cat": "Protein",
+    "name": "Chicken breast, cooked",
+    "serving": "100 g",
+    "cal": 165,
+    "c": 0,
+    "p": 31,
+    "f": 3.6,
+    "id": 103
+  },
+  {
+    "cat": "Protein",
+    "name": "Chicken thigh, cooked",
+    "serving": "100 g",
+    "cal": 209,
+    "c": 0,
+    "p": 26,
+    "f": 10.9,
+    "id": 104
+  },
+  {
+    "cat": "Protein",
+    "name": "Chicken wing, roasted",
+    "serving": "1 medium wing",
+    "cal": 99,
+    "c": 0,
+    "p": 9,
+    "f": 6.8,
+    "id": 105
+  },
+  {
+    "cat": "Protein",
+    "name": "Rotisserie chicken breast",
+    "serving": "100 g",
+    "cal": 180,
+    "c": 0,
+    "p": 29,
+    "f": 7,
+    "id": 106
+  },
+  {
+    "cat": "Protein",
+    "name": "Turkey breast deli slices",
+    "serving": "3 oz",
+    "cal": 90,
+    "c": 2,
+    "p": 18,
+    "f": 1.5,
+    "id": 107
+  },
+  {
+    "cat": "Protein",
+    "name": "Ground turkey, 93 percent lean",
+    "serving": "4 oz cooked",
+    "cal": 170,
+    "c": 0,
+    "p": 22,
+    "f": 8,
+    "id": 108
+  },
+  {
+    "cat": "Protein",
+    "name": "Ground beef, 90 percent lean",
+    "serving": "4 oz cooked",
+    "cal": 200,
+    "c": 0,
+    "p": 23,
+    "f": 11,
+    "id": 109
+  },
+  {
+    "cat": "Protein",
+    "name": "Ground beef, 80 percent lean",
+    "serving": "4 oz cooked",
+    "cal": 287,
+    "c": 0,
+    "p": 19,
+    "f": 23,
+    "id": 110
+  },
+  {
+    "cat": "Protein",
+    "name": "Beef steak, sirloin",
+    "serving": "100 g cooked",
+    "cal": 217,
+    "c": 0,
+    "p": 26,
+    "f": 12,
+    "id": 111
+  },
+  {
+    "cat": "Protein",
+    "name": "Beef steak, ribeye",
+    "serving": "100 g cooked",
+    "cal": 291,
+    "c": 0,
+    "p": 24,
+    "f": 22,
+    "id": 112
+  },
+  {
+    "cat": "Protein",
+    "name": "Pork chop, cooked",
+    "serving": "100 g",
+    "cal": 231,
+    "c": 0,
+    "p": 25,
+    "f": 14,
+    "id": 113
+  },
+  {
+    "cat": "Protein",
+    "name": "Ham slice",
+    "serving": "3 oz",
+    "cal": 130,
+    "c": 1.5,
+    "p": 19,
+    "f": 5,
+    "id": 114
+  },
+  {
+    "cat": "Protein",
+    "name": "Salmon, cooked",
+    "serving": "100 g",
+    "cal": 206,
+    "c": 0,
+    "p": 22,
+    "f": 12,
+    "id": 115
+  },
+  {
+    "cat": "Protein",
+    "name": "Tuna, canned in water",
+    "serving": "1 can drained",
+    "cal": 120,
+    "c": 0,
+    "p": 26,
+    "f": 1,
+    "id": 116
+  },
+  {
+    "cat": "Protein",
+    "name": "Tilapia, cooked",
+    "serving": "100 g",
+    "cal": 128,
+    "c": 0,
+    "p": 26,
+    "f": 2.7,
+    "id": 117
+  },
+  {
+    "cat": "Protein",
+    "name": "Cod, cooked",
+    "serving": "100 g",
+    "cal": 105,
+    "c": 0,
+    "p": 23,
+    "f": 0.9,
+    "id": 118
+  },
+  {
+    "cat": "Protein",
+    "name": "Shrimp, cooked",
+    "serving": "100 g",
+    "cal": 99,
+    "c": 0.2,
+    "p": 24,
+    "f": 0.3,
+    "id": 119
+  },
+  {
+    "cat": "Protein",
+    "name": "Crab meat",
+    "serving": "100 g",
+    "cal": 97,
+    "c": 0,
+    "p": 19,
+    "f": 1.5,
+    "id": 120
+  },
+  {
+    "cat": "Protein",
+    "name": "Tofu, firm",
+    "serving": "100 g",
+    "cal": 144,
+    "c": 3,
+    "p": 17,
+    "f": 8.7,
+    "id": 121
+  },
+  {
+    "cat": "Protein",
+    "name": "Tempeh",
+    "serving": "100 g",
+    "cal": 193,
+    "c": 9,
+    "p": 20,
+    "f": 11,
+    "id": 122
+  },
+  {
+    "cat": "Protein",
+    "name": "Paneer",
+    "serving": "100 g",
+    "cal": 265,
+    "c": 3.6,
+    "p": 18,
+    "f": 20,
+    "id": 123
+  },
+  {
+    "cat": "Protein",
+    "name": "Seitan",
+    "serving": "100 g",
+    "cal": 143,
+    "c": 6,
+    "p": 25,
+    "f": 2,
+    "id": 124
+  },
+  {
+    "cat": "Protein",
+    "name": "Protein bar",
+    "serving": "1 bar",
+    "cal": 220,
+    "c": 23,
+    "p": 20,
+    "f": 7,
+    "id": 125
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "White rice, cooked",
+    "serving": "1 cup",
+    "cal": 205,
+    "c": 45,
+    "p": 4.3,
+    "f": 0.4,
+    "id": 126
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Brown rice, cooked",
+    "serving": "1 cup",
+    "cal": 216,
+    "c": 45,
+    "p": 5,
+    "f": 1.8,
+    "id": 127
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Jasmine rice, cooked",
+    "serving": "1 cup",
+    "cal": 205,
+    "c": 45,
+    "p": 4,
+    "f": 0.4,
+    "id": 128
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Basmati rice, cooked",
+    "serving": "1 cup",
+    "cal": 210,
+    "c": 46,
+    "p": 4.4,
+    "f": 0.5,
+    "id": 129
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Quinoa, cooked",
+    "serving": "1 cup",
+    "cal": 222,
+    "c": 39,
+    "p": 8,
+    "f": 3.6,
+    "id": 130
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Pasta, cooked",
+    "serving": "1 cup",
+    "cal": 221,
+    "c": 43,
+    "p": 8,
+    "f": 1.3,
+    "id": 131
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Whole wheat pasta, cooked",
+    "serving": "1 cup",
+    "cal": 174,
+    "c": 37,
+    "p": 7.5,
+    "f": 0.8,
+    "id": 132
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Mac and cheese",
+    "serving": "1 cup prepared",
+    "cal": 310,
+    "c": 45,
+    "p": 10,
+    "f": 10,
+    "id": 133
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Potato, baked",
+    "serving": "1 medium",
+    "cal": 161,
+    "c": 37,
+    "p": 4.3,
+    "f": 0.2,
+    "id": 134
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Sweet potato, baked",
+    "serving": "1 medium",
+    "cal": 103,
+    "c": 24,
+    "p": 2.3,
+    "f": 0.2,
+    "id": 135
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "French fries",
+    "serving": "medium order",
+    "cal": 365,
+    "c": 48,
+    "p": 4,
+    "f": 17,
+    "id": 136
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Tortilla, flour medium",
+    "serving": "1 tortilla",
+    "cal": 140,
+    "c": 24,
+    "p": 4,
+    "f": 3.5,
+    "id": 137
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Tortilla, corn",
+    "serving": "1 tortilla",
+    "cal": 60,
+    "c": 12,
+    "p": 1.5,
+    "f": 1,
+    "id": 138
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Naan bread",
+    "serving": "1 piece",
+    "cal": 262,
+    "c": 45,
+    "p": 8,
+    "f": 5,
+    "id": 139
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Pita bread",
+    "serving": "1 medium pita",
+    "cal": 165,
+    "c": 33,
+    "p": 5.5,
+    "f": 1,
+    "id": 140
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Dinner roll",
+    "serving": "1 roll",
+    "cal": 84,
+    "c": 15,
+    "p": 2.7,
+    "f": 1.5,
+    "id": 141
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Mashed potatoes",
+    "serving": "1 cup",
+    "cal": 237,
+    "c": 35,
+    "p": 4,
+    "f": 9,
+    "id": 142
+  },
+  {
+    "cat": "Carbs / Staples",
+    "name": "Stuffing",
+    "serving": "1 cup",
+    "cal": 350,
+    "c": 43,
+    "p": 7,
+    "f": 17,
+    "id": 143
+  },
+  {
+    "cat": "Beans / Legumes",
+    "name": "Black beans, cooked",
+    "serving": "1 cup",
+    "cal": 227,
+    "c": 41,
+    "p": 15,
+    "f": 0.9,
+    "id": 144
+  },
+  {
+    "cat": "Beans / Legumes",
+    "name": "Pinto beans, cooked",
+    "serving": "1 cup",
+    "cal": 245,
+    "c": 45,
+    "p": 15,
+    "f": 1.1,
+    "id": 145
+  },
+  {
+    "cat": "Beans / Legumes",
+    "name": "Kidney beans, cooked",
+    "serving": "1 cup",
+    "cal": 225,
+    "c": 40,
+    "p": 15,
+    "f": 0.9,
+    "id": 146
+  },
+  {
+    "cat": "Beans / Legumes",
+    "name": "Chickpeas, cooked",
+    "serving": "1 cup",
+    "cal": 269,
+    "c": 45,
+    "p": 14.5,
+    "f": 4.2,
+    "id": 147
+  },
+  {
+    "cat": "Beans / Legumes",
+    "name": "Lentils, cooked",
+    "serving": "1 cup",
+    "cal": 230,
+    "c": 40,
+    "p": 18,
+    "f": 0.8,
+    "id": 148
+  },
+  {
+    "cat": "Beans / Legumes",
+    "name": "Edamame, shelled",
+    "serving": "1 cup",
+    "cal": 188,
+    "c": 14,
+    "p": 18,
+    "f": 8,
+    "id": 149
+  },
+  {
+    "cat": "Beans / Legumes",
+    "name": "Hummus",
+    "serving": "2 tbsp",
+    "cal": 70,
+    "c": 4,
+    "p": 2,
+    "f": 5,
+    "id": 150
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Roti / chapati",
+    "serving": "1 medium",
+    "cal": 120,
+    "c": 22,
+    "p": 4,
+    "f": 3,
+    "id": 151
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Paratha, plain",
+    "serving": "1 medium",
+    "cal": 260,
+    "c": 36,
+    "p": 6,
+    "f": 10,
+    "id": 152
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Dal, cooked",
+    "serving": "1 cup",
+    "cal": 220,
+    "c": 35,
+    "p": 14,
+    "f": 4,
+    "id": 153
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Chana masala",
+    "serving": "1 cup",
+    "cal": 280,
+    "c": 42,
+    "p": 12,
+    "f": 8,
+    "id": 154
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Rajma",
+    "serving": "1 cup",
+    "cal": 260,
+    "c": 40,
+    "p": 14,
+    "f": 6,
+    "id": 155
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Chicken curry",
+    "serving": "1 cup",
+    "cal": 300,
+    "c": 8,
+    "p": 28,
+    "f": 18,
+    "id": 156
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Chicken biryani",
+    "serving": "1 cup",
+    "cal": 360,
+    "c": 45,
+    "p": 18,
+    "f": 12,
+    "id": 157
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Paneer curry",
+    "serving": "1 cup",
+    "cal": 420,
+    "c": 16,
+    "p": 20,
+    "f": 32,
+    "id": 158
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Samosa",
+    "serving": "1 piece",
+    "cal": 260,
+    "c": 32,
+    "p": 5,
+    "f": 13,
+    "id": 159
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Idli",
+    "serving": "2 pieces",
+    "cal": 120,
+    "c": 24,
+    "p": 4,
+    "f": 1,
+    "id": 160
+  },
+  {
+    "cat": "Indian / South Asian",
+    "name": "Dosa, plain",
+    "serving": "1 medium",
+    "cal": 170,
+    "c": 30,
+    "p": 4,
+    "f": 4,
+    "id": 161
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Turkey sandwich",
+    "serving": "1 sandwich",
+    "cal": 320,
+    "c": 38,
+    "p": 24,
+    "f": 8,
+    "id": 162
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Ham and cheese sandwich",
+    "serving": "1 sandwich",
+    "cal": 390,
+    "c": 35,
+    "p": 24,
+    "f": 17,
+    "id": 163
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Peanut butter and jelly sandwich",
+    "serving": "1 sandwich",
+    "cal": 380,
+    "c": 49,
+    "p": 13,
+    "f": 16,
+    "id": 164
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Grilled cheese sandwich",
+    "serving": "1 sandwich",
+    "cal": 400,
+    "c": 33,
+    "p": 13,
+    "f": 25,
+    "id": 165
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Caesar salad with chicken",
+    "serving": "1 bowl",
+    "cal": 470,
+    "c": 18,
+    "p": 38,
+    "f": 28,
+    "id": 166
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Garden salad with dressing",
+    "serving": "1 bowl",
+    "cal": 180,
+    "c": 14,
+    "p": 4,
+    "f": 12,
+    "id": 167
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Chicken noodle soup",
+    "serving": "1 cup",
+    "cal": 120,
+    "c": 14,
+    "p": 8,
+    "f": 4,
+    "id": 168
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Tomato soup",
+    "serving": "1 cup",
+    "cal": 90,
+    "c": 17,
+    "p": 2,
+    "f": 2,
+    "id": 169
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Chili with beans",
+    "serving": "1 cup",
+    "cal": 280,
+    "c": 30,
+    "p": 18,
+    "f": 10,
+    "id": 170
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Spaghetti with meat sauce",
+    "serving": "1 plate / 2 cups",
+    "cal": 520,
+    "c": 70,
+    "p": 24,
+    "f": 16,
+    "id": 171
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Lasagna",
+    "serving": "1 piece",
+    "cal": 360,
+    "c": 35,
+    "p": 22,
+    "f": 16,
+    "id": 172
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Chicken quesadilla",
+    "serving": "1 quesadilla",
+    "cal": 520,
+    "c": 38,
+    "p": 32,
+    "f": 26,
+    "id": 173
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Bean and cheese burrito",
+    "serving": "1 burrito",
+    "cal": 430,
+    "c": 58,
+    "p": 16,
+    "f": 14,
+    "id": 174
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Chicken burrito bowl",
+    "serving": "1 bowl",
+    "cal": 650,
+    "c": 70,
+    "p": 45,
+    "f": 22,
+    "id": 175
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Beef taco",
+    "serving": "1 taco",
+    "cal": 170,
+    "c": 13,
+    "p": 9,
+    "f": 9,
+    "id": 176
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Chicken taco",
+    "serving": "1 taco",
+    "cal": 150,
+    "c": 13,
+    "p": 12,
+    "f": 6,
+    "id": 177
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Cheese pizza",
+    "serving": "1 slice",
+    "cal": 285,
+    "c": 36,
+    "p": 12,
+    "f": 10,
+    "id": 178
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Pepperoni pizza",
+    "serving": "1 slice",
+    "cal": 313,
+    "c": 35,
+    "p": 13,
+    "f": 13,
+    "id": 179
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Burger, homemade beef",
+    "serving": "1 burger",
+    "cal": 540,
+    "c": 35,
+    "p": 30,
+    "f": 30,
+    "id": 180
+  },
+  {
+    "cat": "Lunch / Dinner",
+    "name": "Hot dog with bun",
+    "serving": "1 hot dog",
+    "cal": 290,
+    "c": 24,
+    "p": 10,
+    "f": 17,
+    "id": 181
+  },
+  {
+    "cat": "Fast Food",
+    "name": "McDonald's Big Mac",
+    "serving": "1 sandwich",
+    "cal": 590,
+    "c": 46,
+    "p": 25,
+    "f": 34,
+    "id": 182
+  },
+  {
+    "cat": "Fast Food",
+    "name": "McDonald's Cheeseburger",
+    "serving": "1 burger",
+    "cal": 300,
+    "c": 32,
+    "p": 15,
+    "f": 13,
+    "id": 183
+  },
+  {
+    "cat": "Fast Food",
+    "name": "McDonald's McChicken",
+    "serving": "1 sandwich",
+    "cal": 400,
+    "c": 39,
+    "p": 14,
+    "f": 21,
+    "id": 184
+  },
+  {
+    "cat": "Fast Food",
+    "name": "McDonald's McNuggets",
+    "serving": "10 pieces",
+    "cal": 410,
+    "c": 26,
+    "p": 23,
+    "f": 25,
+    "id": 185
+  },
+  {
+    "cat": "Fast Food",
+    "name": "McDonald's Fries",
+    "serving": "medium",
+    "cal": 320,
+    "c": 43,
+    "p": 5,
+    "f": 15,
+    "id": 186
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Chick-fil-A Chicken Sandwich",
+    "serving": "1 sandwich",
+    "cal": 420,
+    "c": 41,
+    "p": 29,
+    "f": 18,
+    "id": 187
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Chick-fil-A Nuggets",
+    "serving": "8 count",
+    "cal": 250,
+    "c": 11,
+    "p": 27,
+    "f": 11,
+    "id": 188
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Chick-fil-A Waffle Fries",
+    "serving": "medium",
+    "cal": 420,
+    "c": 45,
+    "p": 5,
+    "f": 24,
+    "id": 189
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Subway Turkey Sandwich",
+    "serving": "6 inch",
+    "cal": 280,
+    "c": 38,
+    "p": 18,
+    "f": 5,
+    "id": 190
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Subway Italian BMT",
+    "serving": "6 inch",
+    "cal": 410,
+    "c": 46,
+    "p": 20,
+    "f": 16,
+    "id": 191
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Chipotle Chicken Bowl",
+    "serving": "1 bowl typical",
+    "cal": 700,
+    "c": 68,
+    "p": 50,
+    "f": 25,
+    "id": 192
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Chipotle Steak Bowl",
+    "serving": "1 bowl typical",
+    "cal": 670,
+    "c": 68,
+    "p": 46,
+    "f": 24,
+    "id": 193
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Taco Bell Crunchy Taco",
+    "serving": "1 taco",
+    "cal": 170,
+    "c": 13,
+    "p": 8,
+    "f": 10,
+    "id": 194
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Taco Bell Bean Burrito",
+    "serving": "1 burrito",
+    "cal": 350,
+    "c": 54,
+    "p": 13,
+    "f": 9,
+    "id": 195
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Panda Express Orange Chicken",
+    "serving": "1 entree serving",
+    "cal": 490,
+    "c": 51,
+    "p": 25,
+    "f": 23,
+    "id": 196
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Panda Express Chow Mein",
+    "serving": "1 side serving",
+    "cal": 510,
+    "c": 80,
+    "p": 13,
+    "f": 20,
+    "id": 197
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Starbucks Latte, 2 percent",
+    "serving": "grande",
+    "cal": 190,
+    "c": 19,
+    "p": 13,
+    "f": 7,
+    "id": 198
+  },
+  {
+    "cat": "Fast Food",
+    "name": "Starbucks Frappuccino",
+    "serving": "grande",
+    "cal": 370,
+    "c": 54,
+    "p": 5,
+    "f": 15,
+    "id": 199
+  },
+  {
+    "cat": "Snacks",
+    "name": "Almonds",
+    "serving": "1 oz",
+    "cal": 164,
+    "c": 6,
+    "p": 6,
+    "f": 14,
+    "id": 200
+  },
+  {
+    "cat": "Snacks",
+    "name": "Cashews",
+    "serving": "1 oz",
+    "cal": 157,
+    "c": 9,
+    "p": 5,
+    "f": 12,
+    "id": 201
+  },
+  {
+    "cat": "Snacks",
+    "name": "Peanuts",
+    "serving": "1 oz",
+    "cal": 161,
+    "c": 5,
+    "p": 7,
+    "f": 14,
+    "id": 202
+  },
+  {
+    "cat": "Snacks",
+    "name": "Walnuts",
+    "serving": "1 oz",
+    "cal": 185,
+    "c": 4,
+    "p": 4.3,
+    "f": 18.5,
+    "id": 203
+  },
+  {
+    "cat": "Snacks",
+    "name": "Trail mix",
+    "serving": "1/4 cup",
+    "cal": 170,
+    "c": 16,
+    "p": 5,
+    "f": 11,
+    "id": 204
+  },
+  {
+    "cat": "Snacks",
+    "name": "Popcorn, air popped",
+    "serving": "3 cups",
+    "cal": 93,
+    "c": 18.6,
+    "p": 3,
+    "f": 1.1,
+    "id": 205
+  },
+  {
+    "cat": "Snacks",
+    "name": "Popcorn, microwave butter",
+    "serving": "1 bag",
+    "cal": 425,
+    "c": 50,
+    "p": 7,
+    "f": 24,
+    "id": 206
+  },
+  {
+    "cat": "Snacks",
+    "name": "Potato chips",
+    "serving": "1 oz",
+    "cal": 152,
+    "c": 15,
+    "p": 2,
+    "f": 10,
+    "id": 207
+  },
+  {
+    "cat": "Snacks",
+    "name": "Tortilla chips",
+    "serving": "1 oz",
+    "cal": 140,
+    "c": 19,
+    "p": 2,
+    "f": 7,
+    "id": 208
+  },
+  {
+    "cat": "Snacks",
+    "name": "Pretzels",
+    "serving": "1 oz",
+    "cal": 108,
+    "c": 22,
+    "p": 3,
+    "f": 1,
+    "id": 209
+  },
+  {
+    "cat": "Snacks",
+    "name": "Crackers",
+    "serving": "1 oz",
+    "cal": 140,
+    "c": 21,
+    "p": 3,
+    "f": 5,
+    "id": 210
+  },
+  {
+    "cat": "Snacks",
+    "name": "Granola bar",
+    "serving": "1 bar",
+    "cal": 140,
+    "c": 25,
+    "p": 3,
+    "f": 4,
+    "id": 211
+  },
+  {
+    "cat": "Snacks",
+    "name": "Chocolate chip cookie",
+    "serving": "2 medium cookies",
+    "cal": 160,
+    "c": 22,
+    "p": 2,
+    "f": 8,
+    "id": 212
+  },
+  {
+    "cat": "Snacks",
+    "name": "Brownie",
+    "serving": "1 square",
+    "cal": 240,
+    "c": 36,
+    "p": 3,
+    "f": 10,
+    "id": 213
+  },
+  {
+    "cat": "Snacks",
+    "name": "Dark chocolate",
+    "serving": "1 oz",
+    "cal": 170,
+    "c": 13,
+    "p": 2,
+    "f": 12,
+    "id": 214
+  },
+  {
+    "cat": "Snacks",
+    "name": "Milk chocolate bar",
+    "serving": "1.55 oz bar",
+    "cal": 235,
+    "c": 26,
+    "p": 3,
+    "f": 13,
+    "id": 215
+  },
+  {
+    "cat": "Snacks",
+    "name": "Beef jerky",
+    "serving": "1 oz",
+    "cal": 116,
+    "c": 3,
+    "p": 9,
+    "f": 7,
+    "id": 216
+  },
+  {
+    "cat": "Snacks",
+    "name": "Rice cakes",
+    "serving": "2 cakes",
+    "cal": 70,
+    "c": 14,
+    "p": 1.4,
+    "f": 0.6,
+    "id": 217
+  },
+  {
+    "cat": "Condiments",
+    "name": "Olive oil",
+    "serving": "1 tbsp",
+    "cal": 119,
+    "c": 0,
+    "p": 0,
+    "f": 13.5,
+    "id": 218
+  },
+  {
+    "cat": "Condiments",
+    "name": "Vegetable oil",
+    "serving": "1 tbsp",
+    "cal": 120,
+    "c": 0,
+    "p": 0,
+    "f": 14,
+    "id": 219
+  },
+  {
+    "cat": "Condiments",
+    "name": "Mayonnaise",
+    "serving": "1 tbsp",
+    "cal": 94,
+    "c": 0.1,
+    "p": 0.1,
+    "f": 10,
+    "id": 220
+  },
+  {
+    "cat": "Condiments",
+    "name": "Ketchup",
+    "serving": "1 tbsp",
+    "cal": 17,
+    "c": 4.5,
+    "p": 0.2,
+    "f": 0,
+    "id": 221
+  },
+  {
+    "cat": "Condiments",
+    "name": "Mustard",
+    "serving": "1 tbsp",
+    "cal": 10,
+    "c": 0.9,
+    "p": 0.6,
+    "f": 0.5,
+    "id": 222
+  },
+  {
+    "cat": "Condiments",
+    "name": "Ranch dressing",
+    "serving": "2 tbsp",
+    "cal": 129,
+    "c": 2,
+    "p": 0.4,
+    "f": 13,
+    "id": 223
+  },
+  {
+    "cat": "Condiments",
+    "name": "Italian dressing",
+    "serving": "2 tbsp",
+    "cal": 80,
+    "c": 3,
+    "p": 0,
+    "f": 7,
+    "id": 224
+  },
+  {
+    "cat": "Condiments",
+    "name": "Caesar dressing",
+    "serving": "2 tbsp",
+    "cal": 160,
+    "c": 1,
+    "p": 1,
+    "f": 17,
+    "id": 225
+  },
+  {
+    "cat": "Condiments",
+    "name": "BBQ sauce",
+    "serving": "2 tbsp",
+    "cal": 60,
+    "c": 14,
+    "p": 0,
+    "f": 0,
+    "id": 226
+  },
+  {
+    "cat": "Condiments",
+    "name": "Salsa",
+    "serving": "1/4 cup",
+    "cal": 20,
+    "c": 4,
+    "p": 1,
+    "f": 0,
+    "id": 227
+  },
+  {
+    "cat": "Condiments",
+    "name": "Soy sauce",
+    "serving": "1 tbsp",
+    "cal": 10,
+    "c": 1,
+    "p": 1,
+    "f": 0,
+    "id": 228
+  },
+  {
+    "cat": "Condiments",
+    "name": "Hot sauce",
+    "serving": "1 tbsp",
+    "cal": 0,
+    "c": 0,
+    "p": 0,
+    "f": 0,
+    "id": 229
+  },
+  {
+    "cat": "Desserts",
+    "name": "Donut, glazed",
+    "serving": "1 donut",
+    "cal": 260,
+    "c": 31,
+    "p": 3,
+    "f": 14,
+    "id": 230
+  },
+  {
+    "cat": "Desserts",
+    "name": "Muffin, blueberry",
+    "serving": "1 medium",
+    "cal": 385,
+    "c": 58,
+    "p": 6,
+    "f": 15,
+    "id": 231
+  },
+  {
+    "cat": "Desserts",
+    "name": "Cupcake with frosting",
+    "serving": "1 cupcake",
+    "cal": 240,
+    "c": 35,
+    "p": 2,
+    "f": 10,
+    "id": 232
+  },
+  {
+    "cat": "Desserts",
+    "name": "Cheesecake",
+    "serving": "1 slice",
+    "cal": 410,
+    "c": 34,
+    "p": 7,
+    "f": 28,
+    "id": 233
+  },
+  {
+    "cat": "Desserts",
+    "name": "Apple pie",
+    "serving": "1 slice",
+    "cal": 320,
+    "c": 45,
+    "p": 3,
+    "f": 14,
+    "id": 234
+  },
+  {
+    "cat": "Desserts",
+    "name": "Greek frozen yogurt",
+    "serving": "1/2 cup",
+    "cal": 100,
+    "c": 18,
+    "p": 6,
+    "f": 1.5,
+    "id": 235
+  }
+]
