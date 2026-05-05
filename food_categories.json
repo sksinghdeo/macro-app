@@ -1,0 +1,137 @@
+[
+  {
+    "id": "produce",
+    "name": "Produce",
+    "subcategories": [
+      "Fruits",
+      "Vegetables",
+      "Leafy greens",
+      "Root vegetables",
+      "Alliums",
+      "Herbs"
+    ]
+  },
+  {
+    "id": "protein",
+    "name": "Protein",
+    "subcategories": [
+      "Chicken",
+      "Turkey",
+      "Beef",
+      "Pork",
+      "Fish",
+      "Seafood",
+      "Eggs",
+      "Tofu & soy",
+      "Protein supplements"
+    ]
+  },
+  {
+    "id": "grains_starches",
+    "name": "Grains & Starches",
+    "subcategories": [
+      "Rice",
+      "Pasta",
+      "Bread",
+      "Oats",
+      "Potatoes",
+      "Cereals",
+      "Flours",
+      "Tortillas"
+    ]
+  },
+  {
+    "id": "legumes",
+    "name": "Legumes",
+    "subcategories": [
+      "Beans",
+      "Lentils",
+      "Chickpeas",
+      "Peas",
+      "Soybeans"
+    ]
+  },
+  {
+    "id": "dairy_alt",
+    "name": "Dairy & Alternatives",
+    "subcategories": [
+      "Milk",
+      "Yogurt",
+      "Cheese",
+      "Paneer",
+      "Plant milks"
+    ]
+  },
+  {
+    "id": "fats_oils",
+    "name": "Fats & Oils",
+    "subcategories": [
+      "Cooking oils",
+      "Butter & ghee",
+      "Nut butters",
+      "Avocado"
+    ]
+  },
+  {
+    "id": "spices",
+    "name": "Spices & Seasonings",
+    "subcategories": [
+      "Whole spices",
+      "Ground spices",
+      "Salt blends",
+      "Masalas",
+      "Fresh aromatics"
+    ]
+  },
+  {
+    "id": "condiments",
+    "name": "Condiments & Sauces",
+    "subcategories": [
+      "Sauces",
+      "Dressings",
+      "Chutneys",
+      "Pastes",
+      "Salsas"
+    ]
+  },
+  {
+    "id": "beverages",
+    "name": "Beverages",
+    "subcategories": [
+      "Water",
+      "Coffee & tea",
+      "Milk drinks",
+      "Juices",
+      "Sports drinks"
+    ]
+  },
+  {
+    "id": "prepared",
+    "name": "Prepared Foods",
+    "subcategories": [
+      "Breakfast",
+      "Lunch / Dinner",
+      "Indian & South Asian",
+      "Frozen / Convenience"
+    ]
+  },
+  {
+    "id": "packaged",
+    "name": "Packaged Foods",
+    "subcategories": [
+      "Snacks",
+      "Bars",
+      "Cereals",
+      "Desserts",
+      "Candy"
+    ]
+  },
+  {
+    "id": "restaurant",
+    "name": "Restaurant Foods",
+    "subcategories": [
+      "Fast Food",
+      "Restaurant / Chains"
+    ]
+  }
+]

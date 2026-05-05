@@ -1,0 +1,30 @@
+{
+  "version": "2026-04-30",
+  "fraction_multipliers": {
+    "1x": 1,
+    "1/2": 0.5,
+    "half": 0.5,
+    "1/3": 0.3333333333,
+    "third": 0.3333333333,
+    "1/4": 0.25,
+    "quarter": 0.25,
+    "3/4": 0.75,
+    "2x": 2,
+    "custom": null
+  },
+  "mass_units_to_g": {
+    "g": 1,
+    "kg": 1000,
+    "oz": 28.3495,
+    "lb": 453.592
+  },
+  "volume_units_note": "Cup/tbsp/tsp conversions depend on ingredient density. Use serving-based multipliers unless a gram value is available.",
+  "common_volume_units": [
+    "cup",
+    "tbsp",
+    "tsp",
+    "ml",
+    "fl oz"
+  ],
+  "recommended_recipe_basis": "Prefer 100 g ingredient rows for recipe calculations; use serving multiplier for non-gram entries."
+}

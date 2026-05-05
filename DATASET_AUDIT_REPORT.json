@@ -1,0 +1,81 @@
+{
+  "build_name": "Macro Butler dataset v2",
+  "build_date": "2026-04-30",
+  "purpose": "Larger but cleaner dataset for food logging and custom recipe building.",
+  "source_note": "This build cleans and restructures the user's existing datasets and preserves a USDA/Open Food Facts-ready schema. Exact USDA FDC IDs were not fabricated.",
+  "online_reference_sources": [
+    "USDA FoodData Central for generic food composition data",
+    "Open Food Facts for barcode/product-label lookup",
+    "Official restaurant nutrition pages for chain restaurant items"
+  ],
+  "counts": {
+    "core_foods": 2485,
+    "brand_foods": 2282,
+    "restaurant_foods": 902,
+    "ingredients_foods": 398,
+    "food_categories": 12,
+    "serving_unit_profiles": 10
+  },
+  "removed_or_excluded": {
+    "core_exact_duplicates_removed": 137,
+    "brand_exact_duplicates_removed": 109,
+    "restaurant_exact_duplicates_removed": 1,
+    "generated_meal_prep_bowls_excluded_from_core": 1684,
+    "reason": "Generated meal-prep combinations are better handled by the Custom Recipe Builder instead of being stored as thousands of near-repeated foods."
+  },
+  "category_counts": {
+    "core_foods": {
+      "Protein": 346,
+      "Lunch / Dinner": 330,
+      "Carbs / Staples": 282,
+      "Fruits": 276,
+      "Vegetables": 270,
+      "Dairy": 264,
+      "Indian / South Asian": 253,
+      "Breakfast": 248,
+      "Drinks": 126,
+      "Beans / Legumes": 90
+    },
+    "brand_foods": {
+      "American Snacks": 572,
+      "Candy / Desserts": 359,
+      "Grocery / Packaged": 353,
+      "Snacks": 249,
+      "Breakfast / Grocery": 169,
+      "Fitness / Protein": 138,
+      "Condiments": 126,
+      "American Drinks": 114,
+      "Frozen / Convenience": 114,
+      "Desserts": 88
+    },
+    "restaurant_foods": {
+      "Fast Food": 549,
+      "Restaurant / Chains": 353
+    },
+    "ingredients_foods": {
+      "Protein": 82,
+      "Produce": 63,
+      "Packaged Foods": 55,
+      "Prepared / Breakfast": 46,
+      "Prepared / Frozen": 27,
+      "Dairy & Alternatives": 26,
+      "Prepared / Regional": 23,
+      "Grains & Starches": 20,
+      "Condiments & Sauces": 12,
+      "Legumes": 10,
+      "Grains": 9,
+      "Spices": 9,
+      "Nuts & Seeds": 7,
+      "Fats & Oils": 5,
+      "Baking": 4
+    }
+  },
+  "quality_rules_applied": [
+    "Normalized serving text, including half/quarter/third fractions.",
+    "Removed exact duplicate food rows after serving and macro normalization.",
+    "Excluded generated meal-prep bowl combinations from app core data.",
+    "Kept base foods and enabled fraction calculations in the app rather than storing fraction rows as separate foods.",
+    "Separated recipe ingredients from general log foods, branded foods, and restaurant foods."
+  ],
+  "next_best_upgrade": "Download USDA FoodData Central Foundation/SR Legacy/FNDDS JSON and map exact fdcId values for high-confidence nutrients."
+}
