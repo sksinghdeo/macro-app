@@ -12376,5 +12376,286 @@ body.mb-add-popup-lock #screenAdd > .card,
 })();
 </script>
 
+
+
+<!-- MB V100 FUNCTIONAL HOTFIX: weight delete/edit, ingredient modal, target sync, storage cleanup -->
+<style id="mb-v100-functional-hotfix-css">
+  .mb-v100-modal.active{
+    position:fixed!important;inset:0!important;z-index:2147483600!important;display:flex!important;align-items:center!important;justify-content:center!important;
+    padding:20px!important;background:rgba(2,6,23,.70)!important;backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important;
+  }
+  .mb-v100-card{
+    width:100%;max-width:520px;max-height:86dvh;overflow-y:auto;border-radius:28px;padding:20px;
+    background:linear-gradient(145deg,#020617,#0b1629);border:1px solid rgba(59,130,246,.36);
+    box-shadow:0 30px 80px rgba(0,0,0,.65),0 0 36px rgba(37,99,235,.28);color:#f8fafc;
+  }
+  .mb-v100-card h3{margin:0 0 10px;font-size:25px;font-weight:950;color:#fff;}
+  .mb-v100-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .mb-v100-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+  .mb-v100-actions.three{grid-template-columns:1fr 1fr 1fr;}
+  .mb-v100-actions button{margin:0!important;width:100%!important;}
+  .mb-v100-note{font-size:13px;line-height:1.45;color:#94a3b8;margin:6px 0 14px;}
+  .mb-v100-warning{margin-top:10px;padding:12px;border-radius:16px;background:rgba(124,45,18,.45);border:1px solid rgba(251,146,60,.35);color:#fed7aa;font-size:13px;font-weight:800;display:none;}
+  body.light-mode .mb-v100-card{background:linear-gradient(145deg,#ffffff,#eef6ff);color:#0f172a;border-color:#bfdbfe;}
+  body.light-mode .mb-v100-card h3{color:#0f172a;}
+  body.light-mode .mb-v100-note{color:#64748b;}
+  @media(max-width:430px){.mb-v100-grid{grid-template-columns:1fr}.mb-v100-actions.three{grid-template-columns:1fr}.mb-v100-card{padding:18px}.mb-v100-actions{grid-template-columns:1fr}}
+</style>
+<script id="mb-v100-functional-hotfix-js">
+(function(){
+  'use strict';
+  if(window.__mbV100FunctionalHotfixInstalled) return;
+  window.__mbV100FunctionalHotfixInstalled = true;
+
+  const $ = id => document.getElementById(id);
+  const N = v => { const x = parseFloat(v); return Number.isFinite(x) ? x : 0; };
+  const R = v => Math.round(N(v)*10)/10;
+  const esc = s => String(s ?? '').replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const todayKey = () => ($('date') && $('date').value) || new Date().toISOString().slice(0,10);
+  const readJSON = (k, fallback=[]) => { try { return JSON.parse(localStorage.getItem(k) || JSON.stringify(fallback)); } catch(e) { return fallback; } };
+  const writeJSON = (k, v) => localStorage.setItem(k, JSON.stringify(v));
+  const norm = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+  const itemKey = i => norm(i && i.name) + '|' + norm(i && i.serving);
+  function toast(msg){
+    if(typeof window.showToast === 'function') return window.showToast(msg);
+    if(typeof window.mbToast === 'function') return window.mbToast(msg);
+    if(typeof window.toast === 'function') return window.toast(msg);
+    const old = $('mbV100Toast'); if(old) old.remove();
+    const t = document.createElement('div');
+    t.id = 'mbV100Toast'; t.textContent = msg;
+    t.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:2147483640;background:#0f172a;color:white;border:1px solid rgba(96,165,250,.35);box-shadow:0 12px 30px rgba(0,0,0,.35);border-radius:999px;padding:12px 16px;font-weight:900;font-size:14px;';
+    document.body.appendChild(t); setTimeout(()=>t.remove(),2200);
+  }
+  function closeV100Modal(id){ const m = $(id); if(m){m.classList.remove('active'); m.innerHTML='';} }
+  window.mbV100CloseModal = closeV100Modal;
+  function ensureV100Modal(id){
+    let m = $(id);
+    if(!m){ m = document.createElement('div'); m.id = id; m.className = 'mb-v100-modal'; document.body.appendChild(m); m.addEventListener('click', e=>{ if(e.target === m) closeV100Modal(id); }); }
+    return m;
+  }
+
+  // ---------- Target sync fix ----------
+  function readDateTargets(date=todayKey()){
+    const direct = readJSON('macro_targets_' + date, {});
+    if(direct && (direct.cal || direct.p || direct.c || direct.f)) return direct;
+    const global = readJSON('macro_targets', {});
+    if(global && (global.cal || global.p || global.c || global.f)) return global;
+    return {cal:2250,c:120,p:190,f:55};
+  }
+  function currentInputsTargets(){
+    return {
+      cal: N($('goalCal')?.value) || readDateTargets().cal || 2250,
+      c: N($('goalC')?.value) || readDateTargets().c || 120,
+      p: N($('goalP')?.value) || readDateTargets().p || 190,
+      f: N($('goalF')?.value) || readDateTargets().f || 55
+    };
+  }
+  function syncTargets(date=todayKey()){
+    const t = readDateTargets(date);
+    localStorage.setItem('macro_targets', JSON.stringify(t));
+    return t;
+  }
+  window.mbV100SyncTargets = syncTargets;
+  const originalSaveTargets = window.saveTargets;
+  window.saveTargets = function(){
+    const date = todayKey();
+    const t = currentInputsTargets();
+    localStorage.setItem('macro_targets_' + date, JSON.stringify(t));
+    localStorage.setItem('macro_targets', JSON.stringify(t));
+    let result;
+    if(typeof originalSaveTargets === 'function'){
+      try { result = originalSaveTargets.apply(this, arguments); }
+      catch(e){ console.warn('Original saveTargets failed; V100 target save already completed.', e); }
+    }
+    try{ if(typeof window.render === 'function') window.render(); }catch(e){}
+    toast('Targets saved');
+    return result;
+  };
+  const originalApplyCalculatedTargets = window.applyCalculatedTargets;
+  window.applyCalculatedTargets = function(){
+    let result;
+    if(typeof originalApplyCalculatedTargets === 'function') result = originalApplyCalculatedTargets.apply(this, arguments);
+    const t = currentInputsTargets();
+    localStorage.setItem('macro_targets_' + todayKey(), JSON.stringify(t));
+    localStorage.setItem('macro_targets', JSON.stringify(t));
+    try{ if(typeof window.render === 'function') window.render(); }catch(e){}
+    return result;
+  };
+  const originalRenderProgress = window.renderProgress;
+  if(typeof originalRenderProgress === 'function'){
+    window.renderProgress = function(){ syncTargets(todayKey()); return originalRenderProgress.apply(this, arguments); };
+  }
+
+  // ---------- Weight edit/delete final fix ----------
+  function getWeights(){ return readJSON('macro_weight_entries', []); }
+  function setWeights(x){ writeJSON('macro_weight_entries', (x||[]).sort((a,b)=>String(a.date).localeCompare(String(b.date)))); }
+  function refreshWeightUI(){
+    try{ if(typeof window.renderWeightTrend === 'function') window.renderWeightTrend(); }catch(e){}
+    try{ if(typeof window.renderProgress === 'function') window.renderProgress(); }catch(e){}
+    setTimeout(patchWeightDeleteButtons, 30);
+  }
+  window.editWeightEntry = function(date){
+    const entries = getWeights();
+    const idx = entries.findIndex(x => String(x.date) === String(date));
+    if(idx < 0){ toast('Weight entry not found'); return; }
+    const e = entries[idx];
+    const modal = ensureV100Modal('mbV100WeightModal');
+    modal.innerHTML = `<div class="mb-v100-card">
+      <h3>Edit Weight</h3>
+      <p class="mb-v100-note">Update the date, value, or unit for this weight entry.</p>
+      <div class="mb-v100-grid">
+        <div><label>Date</label><input id="mbV100WeightDate" type="date" value="${esc(e.date)}"></div>
+        <div><label>Unit</label><select id="mbV100WeightUnit"><option value="lb" ${e.unit==='lb'?'selected':''}>lb</option><option value="kg" ${e.unit==='kg'?'selected':''}>kg</option></select></div>
+      </div>
+      <label>Weight</label><input id="mbV100WeightValue" type="number" step="0.1" inputmode="decimal" value="${esc(e.weight)}">
+      <div id="mbV100WeightWarn" class="mb-v100-warning"></div>
+      <div class="mb-v100-actions three">
+        <button class="good" type="button" id="mbV100WeightSave">Save</button>
+        <button class="danger" type="button" id="mbV100WeightDelete">Delete</button>
+        <button class="light" type="button" onclick="mbV100CloseModal('mbV100WeightModal')">Cancel</button>
+      </div>
+    </div>`;
+    modal.classList.add('active');
+    $('mbV100WeightSave').onclick = function(){
+      const d = ($('mbV100WeightDate')?.value || e.date).trim();
+      const w = N($('mbV100WeightValue')?.value);
+      const u = $('mbV100WeightUnit')?.value || e.unit || 'lb';
+      const warn = $('mbV100WeightWarn');
+      if(!d || !w){ if(warn){warn.textContent='Enter a valid date and weight.'; warn.style.display='block';} return; }
+      const next = getWeights().filter(x => String(x.date) !== String(e.date) && String(x.date) !== String(d));
+      next.push({date:d, weight:w, unit:u});
+      setWeights(next); closeV100Modal('mbV100WeightModal'); refreshWeightUI(); toast('Weight updated');
+    };
+    $('mbV100WeightDelete').onclick = function(){ window.deleteWeightEntry(e.date); closeV100Modal('mbV100WeightModal'); };
+  };
+  window.deleteWeightEntry = function(date){
+    const before = getWeights();
+    const after = before.filter(x => String(x.date) !== String(date));
+    setWeights(after);
+    refreshWeightUI();
+    toast(before.length === after.length ? 'No weight entry found' : 'Weight entry deleted');
+  };
+  function patchWeightDeleteButtons(){
+    const box = $('weightTrend'); if(!box) return;
+    box.querySelectorAll('button').forEach(btn => {
+      const txt = (btn.textContent || '').trim().toLowerCase();
+      const onclick = btn.getAttribute('onclick') || '';
+      if(txt === 'delete' && /editWeightEntry\(['\"]([^'\"]+)['\"]\)/.test(onclick)){
+        const date = onclick.match(/editWeightEntry\(['\"]([^'\"]+)['\"]\)/)[1];
+        btn.setAttribute('onclick', `deleteWeightEntry('${date}')`);
+      }
+    });
+  }
+  const originalWeightRender = window.renderWeightTrend;
+  if(typeof originalWeightRender === 'function'){
+    window.renderWeightTrend = function(){ const r = originalWeightRender.apply(this, arguments); setTimeout(patchWeightDeleteButtons, 0); return r; };
+  }
+
+  // ---------- Custom ingredient modal final fix ----------
+  function getCustomFoodsV100(){ return readJSON('macro_custom_foods_v3', []); }
+  function saveCustomFoodV100(item){
+    const list = [item].concat(getCustomFoodsV100().filter(x => itemKey(x) !== itemKey(item))).slice(0,500);
+    writeJSON('macro_custom_foods_v3', list);
+    // Mirror to older keys only as append/update, not as resurrection source.
+    localStorage.setItem('custom_saved_foods', JSON.stringify(list));
+    return list;
+  }
+  function ingredientFromModal(){
+    const name = ($('mbV100CiName')?.value || '').trim();
+    if(!name){ toast('Enter ingredient name'); return null; }
+    return {
+      id:'custom_ing_' + Date.now(),
+      name,
+      serving:($('mbV100CiServing')?.value || '100 g').trim(),
+      cat:($('mbV100CiCat')?.value || 'Custom Ingredient').trim(),
+      cal:Math.round(N($('mbV100CiCal')?.value)),
+      c:R($('mbV100CiC')?.value),
+      p:R($('mbV100CiP')?.value),
+      f:R($('mbV100CiF')?.value),
+      source:'custom_ingredient'
+    };
+  }
+  function refreshFoodUI(){
+    try{ if(typeof window.loadFoodDatabase === 'function') window.loadFoodDatabase(); }catch(e){}
+    try{ if(typeof window.renderFoodDatabase === 'function') window.renderFoodDatabase(); }catch(e){}
+    try{ if(typeof window.renderIngredientResults === 'function') window.renderIngredientResults(); }catch(e){}
+  }
+  function addIngredientToRecipe(item){
+    window._mbRecipeIngredients = window._mbRecipeIngredients || [];
+    window._mbRecipeIngredients.push({base:item, amount:1, unit:'serving', name:item.name, cal:Math.round(N(item.cal)), c:R(item.c), p:R(item.p), f:R(item.f)});
+    try{ if(typeof window.renderRecipe === 'function') window.renderRecipe(); }catch(e){}
+    try{ if(typeof window.renderRecipeDirect === 'function') window.renderRecipeDirect(); }catch(e){}
+    try{ if(typeof window.mbRefreshStageHeight === 'function') setTimeout(window.mbRefreshStageHeight,40); }catch(e){}
+  }
+  window.openCustomIngredientModal = function(){
+    const modal = ensureV100Modal('mbV100IngredientModal');
+    modal.innerHTML = `<div class="mb-v100-card">
+      <h3>New Ingredient</h3>
+      <p class="mb-v100-note">Save an ingredient for future use, or add it directly to the recipe you are building.</p>
+      <label>Name</label><input id="mbV100CiName" placeholder="Example: homemade sauce">
+      <div class="mb-v100-grid">
+        <div><label>Serving</label><input id="mbV100CiServing" placeholder="100 g / 1 tbsp"></div>
+        <div><label>Category</label><input id="mbV100CiCat" placeholder="Custom Ingredient"></div>
+      </div>
+      <div class="mb-v100-grid">
+        <div><label>Calories</label><input id="mbV100CiCal" type="number" inputmode="decimal"></div>
+        <div><label>Carbs (g)</label><input id="mbV100CiC" type="number" step="0.1" inputmode="decimal"></div>
+        <div><label>Protein (g)</label><input id="mbV100CiP" type="number" step="0.1" inputmode="decimal"></div>
+        <div><label>Fat (g)</label><input id="mbV100CiF" type="number" step="0.1" inputmode="decimal"></div>
+      </div>
+      <div class="mb-v100-actions three">
+        <button class="purple" type="button" id="mbV100CiAddRecipe">Add to Recipe</button>
+        <button class="good" type="button" id="mbV100CiSave">Save Ingredient</button>
+        <button class="light" type="button" onclick="mbV100CloseModal('mbV100IngredientModal')">Cancel</button>
+      </div>
+    </div>`;
+    modal.classList.add('active');
+    $('mbV100CiAddRecipe').onclick = function(){ const item = ingredientFromModal(); if(!item) return; saveCustomFoodV100(item); addIngredientToRecipe(item); refreshFoodUI(); closeV100Modal('mbV100IngredientModal'); toast('Ingredient added to recipe'); };
+    $('mbV100CiSave').onclick = function(){ const item = ingredientFromModal(); if(!item) return; saveCustomFoodV100(item); refreshFoodUI(); closeV100Modal('mbV100IngredientModal'); toast('Ingredient saved'); };
+    setTimeout(() => $('mbV100CiName')?.focus(), 40);
+  };
+
+  // ---------- Delete recipes/meals from all known storage keys ----------
+  const recipeKeys = ['macro_custom_recipes_v3','macro_custom_recipes_v1','macro_custom_recipes_v2','macro_custom_recipes','customRecipes','savedCustomRecipes'];
+  const mealKeys = ['macro_custom_meals_v3','macro_custom_meals_v2','macro_custom_meals','customMeals','savedCustomMeals'];
+  function removeByIdFromKeys(keys, id){
+    keys.forEach(k => {
+      const arr = readJSON(k, []);
+      if(Array.isArray(arr)) writeJSON(k, arr.filter(x => String(x.id) !== String(id)));
+    });
+  }
+  window.mbV100DeleteRecipeEverywhere = function(id){
+    removeByIdFromKeys(recipeKeys, id);
+    try{ if(typeof window.renderSavedRecipes === 'function') window.renderSavedRecipes(); }catch(e){}
+    try{ if(typeof window.renderHistory === 'function') window.renderHistory(); }catch(e){}
+    toast('Recipe deleted');
+  };
+  window.mbV100DeleteMealEverywhere = function(id){
+    removeByIdFromKeys(mealKeys, id);
+    try{ if(typeof window.renderSavedMeals === 'function') window.renderSavedMeals(); }catch(e){}
+    try{ if(typeof window.renderHistory === 'function') window.renderHistory(); }catch(e){}
+    toast('Meal deleted');
+  };
+  const oldDeleteSavedRecipe = window.deleteSavedRecipe;
+  window.deleteSavedRecipe = function(id){ window.mbV100DeleteRecipeEverywhere(id); try{ if(typeof oldDeleteSavedRecipe==='function') oldDeleteSavedRecipe.apply(this, arguments); }catch(e){} };
+  const oldV32DeleteRecipe = window.mbV32DeleteRecipe;
+  window.mbV32DeleteRecipe = function(id){ window.mbV100DeleteRecipeEverywhere(id); try{ if(typeof oldV32DeleteRecipe==='function') oldV32DeleteRecipe.apply(this, arguments); }catch(e){} };
+  const oldDeleteSavedMeal = window.deleteSavedMeal;
+  window.deleteSavedMeal = function(id){ window.mbV100DeleteMealEverywhere(id); try{ if(typeof oldDeleteSavedMeal==='function') oldDeleteSavedMeal.apply(this, arguments); }catch(e){} };
+  const oldV32DeleteMeal = window.mbV32DeleteMeal;
+  window.mbV32DeleteMeal = function(id){ window.mbV100DeleteMealEverywhere(id); try{ if(typeof oldV32DeleteMeal==='function') oldV32DeleteMeal.apply(this, arguments); }catch(e){} };
+
+  // ---------- Boot repair ----------
+  function bootV100(){
+    syncTargets(todayKey());
+    patchWeightDeleteButtons();
+    document.querySelectorAll('button.star-btn').forEach(b => { if(!b.getAttribute('aria-label')) b.setAttribute('aria-label','Toggle favorite'); });
+    document.querySelectorAll('button.small-btn.good').forEach(b => { if((b.textContent||'').trim().toLowerCase()==='use' && !b.getAttribute('aria-label')) b.setAttribute('aria-label','Use food'); });
+  }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bootV100); else bootV100();
+  ['click','input','change'].forEach(evt => document.addEventListener(evt, () => setTimeout(patchWeightDeleteButtons, 50), true));
+})();
+</script>
+
 </body>
 </html>
