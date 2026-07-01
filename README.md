@@ -6,6 +6,8 @@
 
 JavaScript · PWA · OCR · Barcode Scanning · Nutrition Tracking · Mobile Web
 
+[Use the App](https://sksinghdeo.github.io/macro-app/)
+
 </div>
 
 ---
@@ -13,6 +15,16 @@ JavaScript · PWA · OCR · Barcode Scanning · Nutrition Tracking · Mobile Web
 <p align="center">
   <img src="images/screenshots/macro-butler-screenshot-strip.jpg" width="950" alt="Macro Butler app screenshots showing home dashboard, macro targets, scan screen, food log, analytics, and settings backup">
 </p>
+
+## Use the App
+
+Macro Butler can be used directly from the browser:
+
+**https://sksinghdeo.github.io/macro-app/**
+
+For a phone-app experience, open the link on your phone, tap **Share**, then choose **Add to Home Screen**. After that, Macro Butler launches like a mobile app from your home screen.
+
+---
 
 ## Overview
 
@@ -80,65 +92,3 @@ Tesseract.js
 ZXing Browser
 JSON food datasets
 Local browser storage
-```
-
----
-
-## Repository Structure
-
-```text
-macro-app/
-├── index.html
-├── manifest.json
-├── service-worker.js
-├── core_foods.json
-├── brand_foods.json
-├── restaurant_foods.json
-├── ingredients_foods.json
-├── custom_recipes.json
-├── serving_units.json
-├── food_categories.json
-├── icon.PNG
-├── macro-butler-logo.svg
-└── images/
-    └── screenshots/
-        ├── macro-butler-screenshot-strip.jpg
-        ├── home.png
-        ├── edit-macros.png
-        ├── scan.png
-        ├── food-log.png
-        ├── analytics.png
-        └── settings-backup.png
-```
-
----
-
-## Run Locally
-
-Because this is a static web app, it can be opened directly in a browser. For the best behavior with service-worker and PWA features, run it through a local server:
-
-```bash
-python -m http.server 8000
-```
-
-Then open:
-
-```text
-http://localhost:8000
-```
-
----
-
-## Data Notes
-
-The app includes local food datasets for common foods, branded foods, restaurant foods, ingredients, recipes, serving units, and categories.
-
-Nutrition values should be treated as practical app data rather than medical or clinical nutrition guidance. Users should verify food data for strict dietary, medical, or competition-prep use.
-
----
-
-## Portfolio Scope
-
-This is a personal software side project. It is included in my portfolio to show frontend implementation, mobile UX thinking, browser APIs, OCR/barcode integration, local data modeling, and practical app design.
-
-My primary engineering portfolio focus remains robotics, embedded sensing, EV systems, validation, and mechatronics.
